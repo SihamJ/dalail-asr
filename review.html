@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>فحص المحاذاة</title>
+<style>
+  body { font-family: "Geeza Pro", "Amiri", serif; background: #f4efe2;
+         color: #2c2a22; margin: 0; }
+  header { position: sticky; top: 0; background: #f4efe2ee; padding: 12px 18px;
+           border-bottom: 1px solid #d8d0bc; z-index: 2; }
+  h1 { font-size: 16px; margin: 0 0 8px; }
+  audio { width: 100%; }
+  .picker button { font-size: 13px; margin-inline-end: 8px; padding: 4px 12px;
+                   border: 1px solid #b7ac8d; background: #fffdf6;
+                   border-radius: 999px; cursor: pointer; }
+  .picker button.on { background: #175945; color: #f5e8c9; border-color: #175945; }
+  #save { position: absolute; inset-inline-start: 18px; top: 12px;
+          font-size: 12px; padding: 5px 14px; border-radius: 999px;
+          border: 1px solid #175945; color: #175945; background: #fffdf6;
+          cursor: pointer; }
+  #stats { font-size: 12px; color: #7a745f; margin-top: 6px; }
+  #list { padding: 10px 18px 40vh; }
+  .row { padding: 9px 12px; border-radius: 10px; margin-bottom: 4px;
+         cursor: pointer; font-size: 17px; line-height: 1.9;
+         display: flex; gap: 12px; align-items: baseline; }
+  .row:hover { background: #ece5d2; }
+  .row.current { background: #e2ead9; outline: 2px solid #175945; }
+  .row.review { border-inline-start: 4px solid #c86b45; background: #f7ece4; }
+  .row.review.current { outline-color: #c86b45; }
+  .row.edited { border-inline-start: 4px solid #175945; background: #eaf0e4; }
+  .t { font-size: 11px; color: #98917a; min-width: 88px; direction: ltr;
+       text-align: right; font-variant-numeric: tabular-nums; }
+  /* the editing bench — fixed at the bottom, works on the SELECTED row */
+  #bench { position: fixed; bottom: 0; inset-inline: 0; z-index: 3;
+           background: #fffdf6; border-top: 1px solid #d8d0bc;
+           padding: 10px 18px 14px; display: none; }
+  #bench.on { display: block; }
+  #benchLabel { font-size: 14px; margin-bottom: 8px; white-space: nowrap;
+                overflow: hidden; text-overflow: ellipsis; }
+  .knobs { display: flex; gap: 18px; flex-wrap: wrap; }
+  .knob { display: flex; gap: 5px; align-items: center; }
+  .knob b { font-size: 12px; color: #7a745f; font-weight: 600; }
+  .knob .v { font-size: 12.5px; direction: ltr;
+             font-variant-numeric: tabular-nums; min-width: 52px;
+             text-align: center; }
+  #bench button { font-size: 12.5px; padding: 5px 11px; border-radius: 999px;
+                  border: 1px solid #b7ac8d; background: #fffdf6;
+                  cursor: pointer; }
+  #bench button.play { background: #175945; color: #f5e8c9;
+                       border-color: #175945; }
+  #bench button.here { border-color: #c86b45; color: #c86b45; }
+  #bench button.reset { border-color: #98917a; color: #98917a; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title"></h1>
+  <button id="save">تنزيل التعديلات (<span id="n">0</span>)</button>
+  <div class="picker" id="picker"></div>
+  <audio id="a" controls preload="none"></audio>
+  <div id="stats"></div>
+</header>
+<div id="list"></div>
+
+<div id="bench">
+  <div id="benchLabel"></div>
+  <div class="knobs">
+    <div class="knob">
+      <b>البداية</b>
+      <button onclick="nudge('t0',-0.3)">−0.3</button>
+      <span class="v" id="v0"></span>
+      <button onclick="nudge('t0',+0.3)">+0.3</button>
+      <button class="play" onclick="playFrom('t0')">▶</button>
+      <button class="here" onclick="markHere('t0')">⏹ هنا</button>
+    </div>
+    <div class="knob">
+      <b>النهاية</b>
+      <button onclick="nudge('t1',-0.3)">−0.3</button>
+      <span class="v" id="v1"></span>
+      <button onclick="nudge('t1',+0.3)">+0.3</button>
+      <button class="play" onclick="playFrom('t1')">▶</button>
+      <button class="here" onclick="markHere('t1')">⏹ هنا</button>
+    </div>
+    <div class="knob">
+      <button class="reset" onclick="resetRow()">استرجاع</button>
+    </div>
+  </div>
+</div>
+
+<script src="review_data.js"></script>
+<script>
+const a = document.getElementById("a");
+const list = document.getElementById("list");
+const KEY = "dalail_review_edits_v1";
+let ov = JSON.parse(localStorage.getItem(KEY) || "{}"); // {rec:{i:{t0,t1}}}
+let recKey = null;
+let rows = [];
+let sel = -1;
+
+function fmt(s) {
+  const m = Math.floor(s / 60), r = Math.floor(s % 60);
+  return m + ":" + String(r).padStart(2, "0");
+}
+function fmt1(s) { return s.toFixed(1) + "s"; }
+
+function edits() { return ov[recKey] || {}; }
+function edited(i) { return edits()[i] !== undefined; }
+
+function saveOv() {
+  localStorage.setItem(KEY, JSON.stringify(ov));
+  const total = Object.values(ov).reduce(
+    (n, rec) => n + Object.keys(rec).length, 0);
+  document.getElementById("n").textContent = total;
+}
+
+function rowTimes(i) {
+  const base = DATA[recKey].rows[i];
+  const o = edits()[i];
+  return { t0: o ? o.t0 : base.t0, t1: o ? o.t1 : base.t1 };
+}
+
+function paintRow(i) {
+  const r = rows[i];
+  const { t0, t1 } = rowTimes(i);
+  r.t0 = t0; r.t1 = t1;
+  r.el.querySelector(".t").textContent = fmt(t0) + "–" + fmt(t1);
+  r.el.classList.toggle("edited", edited(i));
+  // an edited row is answered — the orange flag yields to the green edge
+  r.el.classList.toggle("review", r.review && !edited(i));
+}
+
+function paintBench() {
+  if (sel < 0) return;
+  const { t0, t1 } = rowTimes(sel);
+  document.getElementById("v0").textContent = fmt1(t0);
+  document.getElementById("v1").textContent = fmt1(t1);
+  document.getElementById("benchLabel").textContent = rows[sel].label;
+  document.getElementById("bench").classList.add("on");
+}
+
+function select(i) {
+  sel = i;
+  paintBench();
+}
+
+function setTime(field, val) {
+  if (sel < 0) return;
+  const cur = rowTimes(sel);
+  cur[field] = Math.max(0, Math.round(val * 100) / 100);
+  if (cur.t1 < cur.t0) cur[field === "t0" ? "t1" : "t0"] = cur[field];
+  (ov[recKey] = ov[recKey] || {})[sel] = { t0: cur.t0, t1: cur.t1 };
+  saveOv();
+  paintRow(sel);
+  paintBench();
+}
+
+function nudge(field, d) {
+  if (sel < 0) return;
+  setTime(field, rowTimes(sel)[field] + d);
+  playFrom(field);
+}
+function markHere(field) { setTime(field, a.currentTime); }
+function playFrom(field) {
+  if (sel < 0) return;
+  const t = rowTimes(sel)[field];
+  // hearing the EDGE needs a run-up: two seconds before it
+  a.currentTime = Math.max(0, t - (field === "t1" ? 2 : 0.05));
+  a.play();
+}
+function resetRow() {
+  if (sel < 0 || !edited(sel)) return;
+  delete ov[recKey][sel];
+  saveOv();
+  paintRow(sel);
+  paintBench();
+}
+
+function show(key) {
+  recKey = key;
+  sel = -1;
+  document.getElementById("bench").classList.remove("on");
+  const d = DATA[key];
+  document.getElementById("title").textContent = d.title;
+  a.src = d.audio;
+  rows = d.rows.map(r => ({ ...r }));
+  const n = rows.filter(r => !r.review).length;
+  document.getElementById("stats").textContent =
+    "تلقائي " + n + " · للمراجعة " + (rows.length - n) +
+    " — اضغطي سطراً لتحريره في اللوحة أسفلَ الصفحة؛ البرتقالي مُقدَّر، الأخضر معدَّل";
+  list.innerHTML = "";
+  rows.forEach((r, i) => {
+    const el = document.createElement("div");
+    el.className = "row";
+    el.innerHTML = "<span class=t></span><span>" + r.label + "</span>";
+    el.onclick = () => { select(i); playFrom("t0"); };
+    list.appendChild(el);
+    r.el = el;
+    paintRow(i);
+  });
+  for (const b of document.querySelectorAll(".picker button"))
+    b.classList.toggle("on", b.dataset.k === key);
+  saveOv();
+}
+
+const picker = document.getElementById("picker");
+for (const k of Object.keys(DATA)) {
+  const b = document.createElement("button");
+  b.textContent = DATA[k].title.split(" — ")[0];
+  b.dataset.k = k;
+  b.onclick = () => show(k);
+  picker.appendChild(b);
+}
+
+let cur = -1;
+a.addEventListener("timeupdate", () => {
+  const t = a.currentTime;
+  let i = rows.findIndex(r => t >= r.t0 && t < r.t1);
+  if (i !== cur) {
+    if (cur >= 0 && rows[cur]) rows[cur].el.classList.remove("current");
+    cur = i;
+    if (i >= 0) {
+      rows[i].el.classList.add("current");
+      rows[i].el.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
+  }
+});
+
+document.getElementById("save").onclick = () => {
+  const doc = {
+    _comment: "human-verified timestamps (seconds) — dalail-asr/review.html; " +
+              "keyed by recording, then row index into review_data.js",
+    edits: {},
+  };
+  for (const [rec, m] of Object.entries(ov)) {
+    if (!Object.keys(m).length) continue;
+    doc.edits[rec] = {};
+    for (const [i, t] of Object.entries(m)) {
+      doc.edits[rec][i] = { ...t, label: DATA[rec].rows[i].label.slice(0, 60) };
+    }
+  }
+  const blob = new Blob([JSON.stringify(doc, null, 2)],
+                        { type: "application/json" });
+  const l = document.createElement("a");
+  l.href = URL.createObjectURL(blob);
+  l.download = "dalail_time_overrides.json";
+  l.click();
+};
+
+show("hamzia");
+</script>
+</body>
+</html>
