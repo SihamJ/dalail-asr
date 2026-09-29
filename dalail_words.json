@@ -14,6 +14,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -24,6 +25,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34,6 +36,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2.56,
@@ -247,6 +250,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 33.56,
@@ -285,6 +289,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 35.66,
@@ -353,6 +358,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 48.28,
@@ -486,6 +492,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 77.84,
@@ -634,6 +641,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 113.18,
@@ -792,6 +800,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 141.4,
@@ -970,6 +979,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 183.88,
@@ -1093,6 +1103,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 209.08,
@@ -1216,6 +1227,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 234.46,
@@ -1339,6 +1351,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 259.74,
@@ -1462,6 +1475,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 284.42,
@@ -1635,6 +1649,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 328.12,
@@ -1753,6 +1768,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 348.72,
@@ -1856,6 +1872,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 366.28,
@@ -2559,6 +2576,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 487.12,
@@ -2607,6 +2625,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 493.16,
@@ -2660,6 +2679,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 501.54,
@@ -2908,6 +2928,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 546.7,
@@ -3071,6 +3092,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 575.74,
@@ -3259,6 +3281,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 609.52,
@@ -3397,6 +3420,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 638.64,
@@ -3570,6 +3594,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 663.42,
@@ -3753,6 +3778,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 703.08,
@@ -3931,6 +3957,7 @@
    "review": true,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 736.42,
@@ -4234,6 +4261,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 770.18,
@@ -4427,6 +4455,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 809.78,
@@ -4655,6 +4684,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 846.22,
@@ -4763,6 +4793,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 862.04,
@@ -4866,6 +4897,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 884.78,
@@ -5074,6 +5106,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 929.2,
@@ -5407,6 +5440,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 995.28,
@@ -6025,6 +6059,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1098.42,
@@ -6338,6 +6373,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -6348,6 +6384,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1150.14,
@@ -6581,6 +6618,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1183.72,
@@ -6744,6 +6782,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1204.16,
@@ -6887,6 +6926,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1219.24,
@@ -7145,6 +7185,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1246.42,
@@ -7308,6 +7349,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1265.82,
@@ -7466,6 +7508,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1299.38,
@@ -7609,6 +7652,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1314.42,
@@ -7767,6 +7811,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1337.08,
@@ -8125,6 +8170,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1413.56,
@@ -8363,6 +8409,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -8373,6 +8420,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1473.54,
@@ -8616,6 +8664,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1512.2,
@@ -8799,6 +8848,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1544.54,
@@ -9012,6 +9062,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1585.28,
@@ -9165,6 +9216,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1609.94,
@@ -9388,6 +9440,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 1664.86,
@@ -9891,6 +9944,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1732.42,
@@ -10204,6 +10258,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1791.76,
@@ -10347,6 +10402,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1814.76,
@@ -10610,6 +10666,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -10620,6 +10677,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1871.16,
@@ -10843,6 +10901,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 1907.28,
@@ -11271,6 +11330,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 1979.04,
@@ -11594,6 +11654,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2015.4,
@@ -11837,6 +11898,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2047.2,
@@ -11990,6 +12052,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2064.74,
@@ -12523,6 +12586,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2131.98,
@@ -12746,6 +12810,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2167.9,
@@ -13249,6 +13314,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2224.38,
@@ -13347,6 +13413,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2235.34,
@@ -13490,6 +13557,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -13500,6 +13568,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2253.72,
@@ -13773,6 +13842,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2297.06,
@@ -13856,6 +13926,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2322.88,
@@ -13939,6 +14010,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2341.48,
@@ -14102,6 +14174,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2365.92,
@@ -14390,6 +14463,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2416.46,
@@ -14508,6 +14582,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2434.06,
@@ -14616,6 +14691,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2448.82,
@@ -14744,6 +14820,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2469.68,
@@ -14972,6 +15049,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2513.2,
@@ -15040,6 +15118,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2520.24,
@@ -15113,6 +15192,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2529.38,
@@ -15276,6 +15356,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2551.98,
@@ -15419,6 +15500,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2580.94,
@@ -15547,6 +15629,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2610.54,
@@ -15645,6 +15728,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2621.8,
@@ -15763,6 +15847,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2636.58,
@@ -15971,6 +16056,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2662.46,
@@ -16269,6 +16355,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2708.52,
@@ -16362,6 +16449,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2718.74,
@@ -16790,6 +16878,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2786.56,
@@ -16938,6 +17027,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2810.62,
@@ -17141,6 +17231,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 2834.26,
@@ -17219,6 +17310,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2843.08,
@@ -17467,6 +17559,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2875.52,
@@ -17615,6 +17708,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2895.9,
@@ -18013,6 +18107,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2954.6,
@@ -18051,6 +18146,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -18061,6 +18157,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2957.26,
@@ -18219,6 +18316,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 2981.26,
@@ -18392,6 +18490,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3005.9,
@@ -18565,6 +18664,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3031.08,
@@ -18713,6 +18813,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3051.86,
@@ -18896,6 +18997,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3086.42,
@@ -19059,6 +19161,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3121.32,
@@ -19192,6 +19295,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3290.52,
@@ -19495,6 +19599,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -19505,6 +19610,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3437.26,
@@ -19833,6 +19939,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3495.26,
@@ -20446,6 +20553,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3600.18,
@@ -20574,6 +20682,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3620.02,
@@ -20757,6 +20866,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3652.92,
@@ -20950,6 +21060,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3678.14,
@@ -21223,6 +21334,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3712.1,
@@ -21366,6 +21478,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3728.34,
@@ -21624,6 +21737,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3763.42,
@@ -21817,6 +21931,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 3792.46,
@@ -21945,6 +22060,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3807.12,
@@ -22068,6 +22184,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3823.86,
@@ -22311,6 +22428,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 3864.06,
@@ -22634,6 +22752,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3923.98,
@@ -22797,6 +22916,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3943.4,
@@ -23000,6 +23120,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 3963.7,
@@ -23628,6 +23749,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4043.88,
@@ -23811,6 +23933,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4067.44,
@@ -24154,6 +24277,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4109.34,
@@ -24342,6 +24466,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4135.52,
@@ -24675,6 +24800,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -24685,6 +24811,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4179.96,
@@ -24993,6 +25120,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4216.7,
@@ -25216,6 +25344,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4238.2,
@@ -25414,6 +25543,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4269.54,
@@ -25547,6 +25677,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4280.66,
@@ -25695,6 +25826,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4300.14,
@@ -25768,6 +25900,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4308.62,
@@ -25866,6 +25999,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4318.62,
@@ -25984,6 +26118,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4332.1,
@@ -26127,6 +26262,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4348.32,
@@ -26285,6 +26421,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4376.3,
@@ -26348,6 +26485,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4381.94,
@@ -26386,6 +26524,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4384.32,
@@ -26899,6 +27038,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4443.94,
@@ -28262,6 +28402,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4682.5,
@@ -28665,6 +28806,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4744.24,
@@ -28808,6 +28950,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4757.2,
@@ -28941,6 +29084,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -28951,6 +29095,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4784.8,
@@ -29089,6 +29234,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4802.76,
@@ -29282,6 +29428,7 @@
    "review": true,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4822.22,
@@ -29400,6 +29547,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4832.36,
@@ -29613,6 +29761,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4855.86,
@@ -29726,6 +29875,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4867.12,
@@ -29844,6 +29994,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 4877.88,
@@ -29987,6 +30138,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4890.1,
@@ -30325,6 +30477,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4926.56,
@@ -30533,6 +30686,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -30543,6 +30697,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4961.72,
@@ -30686,6 +30841,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -30696,6 +30852,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 4981.52,
@@ -30919,6 +31076,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5005.26,
@@ -31047,6 +31205,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -31057,6 +31216,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5023.66,
@@ -31315,6 +31475,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5054.28,
@@ -31578,6 +31739,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5087.02,
@@ -31896,6 +32058,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -31906,6 +32069,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -31916,6 +32080,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5117.72,
@@ -32644,6 +32809,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5198.46,
@@ -32842,6 +33008,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -32852,6 +33019,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5255.54,
@@ -32995,6 +33163,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5273.98,
@@ -33108,6 +33277,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5284.32,
@@ -33236,6 +33406,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5298.08,
@@ -33404,6 +33575,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5312.42,
@@ -33512,6 +33684,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -33522,6 +33695,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5330.54,
@@ -33665,6 +33839,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -33675,6 +33850,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5355.92,
@@ -33788,6 +33964,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5369.58,
@@ -33906,6 +34083,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -33916,6 +34094,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5390.62,
@@ -34019,6 +34198,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5405.06,
@@ -34087,6 +34267,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5413.56,
@@ -34220,6 +34401,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34230,6 +34412,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34240,6 +34423,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5425.72,
@@ -34328,6 +34512,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5438.4,
@@ -34406,6 +34591,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5450.5,
@@ -34484,6 +34670,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5474.32,
@@ -34572,6 +34759,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34582,6 +34770,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34592,6 +34781,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34602,6 +34792,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34612,6 +34803,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5496.7,
@@ -34960,6 +35152,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -34970,6 +35163,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5548.06,
@@ -35208,6 +35402,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5580.5,
@@ -35306,6 +35501,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5593.52,
@@ -35489,6 +35685,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5631.22,
@@ -35687,6 +35884,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5657.58,
@@ -35990,6 +36188,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5690.3,
@@ -36863,6 +37062,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 5784.02,
@@ -37671,6 +37871,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5867.02,
@@ -37899,6 +38100,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5889.24,
@@ -38402,6 +38604,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5957.66,
@@ -38545,6 +38748,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5973.08,
@@ -38663,6 +38867,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 5983.08,
@@ -39166,6 +39371,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -39176,6 +39382,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6034.56,
@@ -41609,6 +41816,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6335.82,
@@ -41707,6 +41915,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -41717,6 +41926,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -41727,6 +41937,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6348.94,
@@ -41890,6 +42101,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6365.5,
@@ -42043,6 +42255,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6378.94,
@@ -42181,6 +42394,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6399.2,
@@ -42309,6 +42523,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6414.52,
@@ -42467,6 +42682,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6437.36,
@@ -42675,6 +42891,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6463.6,
@@ -42793,6 +43010,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6477.36,
@@ -42966,6 +43184,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6500.86,
@@ -43189,6 +43408,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6531.34,
@@ -43327,6 +43547,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6547.38,
@@ -43465,6 +43686,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6566.44,
@@ -43588,6 +43810,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6581.1,
@@ -43716,6 +43939,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6595.56,
@@ -43919,6 +44143,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6621.82,
@@ -44067,6 +44292,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6637.24,
@@ -44170,6 +44396,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6650.38,
@@ -44248,6 +44475,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 6659.42,
@@ -44306,6 +44534,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6667.78,
@@ -44429,6 +44658,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6683.98,
@@ -44987,6 +45217,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6762.92,
@@ -45115,6 +45346,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6786.68,
@@ -45253,6 +45485,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6806.12,
@@ -45351,6 +45584,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6818.84,
@@ -45499,6 +45733,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6844.58,
@@ -45632,6 +45867,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6859.22,
@@ -45760,6 +45996,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6873.18,
@@ -46123,6 +46360,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6925.02,
@@ -46226,6 +46464,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6940.1,
@@ -46329,6 +46568,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6954.8,
@@ -46502,6 +46742,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 6978.04,
@@ -46700,6 +46941,7 @@
    "review": true,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": []
   },
   {
@@ -46710,6 +46952,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7004.32,
@@ -47018,6 +47261,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7060.4,
@@ -47281,6 +47525,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7100.78,
@@ -47464,6 +47709,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7119.48,
@@ -47852,6 +48098,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7170.78,
@@ -48090,6 +48337,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7200.76,
@@ -48183,6 +48431,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7213.56,
@@ -48461,6 +48710,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7247.38,
@@ -49814,6 +50064,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7436.28,
@@ -49917,6 +50168,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7449.36,
@@ -50080,6 +50332,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7478.2,
@@ -50258,6 +50511,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7500.72,
@@ -50371,6 +50625,7 @@
    "review": false,
    "optional_sung": true,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7515.92,
@@ -50469,6 +50724,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7527.0,
@@ -50777,6 +51033,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7571.3,
@@ -51310,6 +51567,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7671.02,
@@ -51433,6 +51691,7 @@
    "review": false,
    "optional_sung": false,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 7690.48,
@@ -51526,6 +51785,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7698.66,
@@ -52709,6 +52969,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7848.68,
@@ -53067,6 +53328,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7884.9,
@@ -53570,6 +53832,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7946.12,
@@ -53663,6 +53926,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7958.32,
@@ -53761,6 +54025,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 7966.86,
@@ -53799,6 +54064,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7968.48,
@@ -53832,6 +54098,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7970.82,
@@ -53880,6 +54147,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 7979.18,
@@ -53913,6 +54181,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 7982.4,
@@ -53976,6 +54245,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 7988.76,
@@ -54019,6 +54289,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 7992.86,
@@ -54087,6 +54358,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8004.28,
@@ -54212,6 +54484,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8028.44,
@@ -54290,6 +54563,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8050.4,
@@ -54358,6 +54632,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8058.3,
@@ -54431,6 +54706,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8077.4,
@@ -54504,6 +54780,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8093.82,
@@ -54572,6 +54849,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": true,
+   "cut": false,
    "passes": [
     {
      "t0": 8119.36,
@@ -54645,6 +54923,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 8131.56,
@@ -54708,6 +54987,7 @@
    "review": false,
    "optional_sung": null,
    "found_in_gap": false,
+   "cut": false,
    "passes": [
     {
      "t0": 8139.22,

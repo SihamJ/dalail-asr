@@ -39,7 +39,7 @@ for ln, d in zip(lines, dec):
     if d["sung"]:
         ps = d["passes"]
         rows.append({"t0": ps[0]["t0"] / 1000, "t1": ps[-1]["t1"] / 1000, "text": text,
-                     "review": ps[0]["adv"] < WEAK, "passes": ps, "sung": True})
+                     "review": ps[0]["adv"] < WEAK or bool(d.get("cut")), "passes": ps, "sung": True})
     else:
         rows.append({"t0": None, "t1": None, "text": text, "review": True, "passes": [], "sung": False})
 for i, r in enumerate(rows):          # les lignes non chantées : un intervalle interpolé
@@ -67,7 +67,7 @@ out = []
 for vi, (ln, r, d) in enumerate(zip(lines, rows, dec)):
     out.append({"v": vi + 1, "id": ln.get("id"), "text": ln["text"], "sung": r["sung"],
                 "review": r["review"], "optional_sung": d.get("optional_sung"),
-                "found_in_gap": bool(d.get("filled")),
+                "found_in_gap": bool(d.get("filled")), "cut": bool(d.get("cut")),
                 "passes": [{"t0": round(p["t0"] / 1000, 2), "t1": round(p["t1"] / 1000, 2),
                             "score": p["adv"],
                             "words": [{"w": w, "t0": round(t0 / 1000, 2), "t1": round(t1 / 1000, 2)}

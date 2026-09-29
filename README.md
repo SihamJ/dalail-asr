@@ -69,7 +69,9 @@ d'étiquettes, par-dessus l'audio.
 
 `passes` a un élément par fois où la ligne est chantée (vide si elle ne
 l'est pas). `found_in_gap` vaut `true` pour une ligne retrouvée par la
-seconde passe (voir l'étape 3 bis) : ce sont les premières à écouter. `optional_sung` dit si les mots entre parenthèses — `(سَيِّدِنَا)`
+seconde passe (voir l'étape 3 bis) : ce sont les premières à écouter.
+`cut` vaut `true` pour une ligne coupée par le bord de l'enregistrement :
+seuls ses mots présents ont un temps. `optional_sung` dit si les mots entre parenthèses — `(سَيِّدِنَا)`
 — ont été retenus comme chantés (voir « Limites »). Pour surligner, prenez
 `t0` de chaque mot : le mot reste allumé jusqu'au `t0` du suivant.
 
@@ -80,7 +82,7 @@ seconde passe (voir l'étape 3 bis) : ce sont les premières à écouter. `optio
 | lignes placées | 250 / 280 | 439 / 462 |
 | … dont retrouvées dans leur trou (étape 3 bis) | 50 | 35 |
 | lignes répétées | 1 | 13 |
-| lignes REVIEW | 33 | 23 |
+| lignes REVIEW | 33 | 24 |
 | mots avec un temps — ancien pipeline | 55 % | 45 % |
 | mots avec un temps — nouveau | 100 % des lignes placées | 100 % des lignes placées |
 
@@ -90,9 +92,9 @@ vérifié à l'oreille sur des exemples :
 - **Dalail** (30) : surtout des lignes que le munshid ne chante pas par
   nature — titres et notes de l'édition (« ثم تدعو بهذا الدعاء… »,
   « نجز الثلث الأول… ») — et quelques lignes omises.
-- **Hamziyya** (23) : v441–v460, les vingt vers qui précèdent la prière
-  finale (le munshid passe de v440 directement à v461, vers 1:56:52) ;
-  v242–v243 ; et v462, qui tomberait après la fin de l'enregistrement.
+- **Hamziyya** (23) : l'enregistrement s'arrête net à 1:57:01, en plein
+  v441 (« …فقامت تغار », placé et marqué `cut`) ; v442–v462 n'y sont donc
+  pas. S'y ajoutent v242–v243.
 
 ## Pourquoi un nouveau pipeline
 
@@ -143,7 +145,10 @@ mêmes frontières à 100 ms près pour ~90 % des mots.
    première avaler l'audio des suivantes, qui lui ressemblent.) Une ligne
    qui colle mal est retirée et le trou réaligné sans elle ; si le trou
    est trop court pour toutes, on retire celle qui, seule, ressemble le
-   moins à ce qu'il contient.
+   moins à ce qu'il contient. Au bord de l'enregistrement, une ligne peut
+   être coupée en plein chant : si elle n'entre pas en entier dans le
+   dernier trou, on place son début (le plus long qui colle et va jusqu'à
+   la fin du fichier) — de même pour la fin d'une ligne au tout début.
 4. **`new/export.py`** — les livrables ci-dessus, et `review_data.js`.
 
 `new/run.sh` enchaîne le tout. La position a priori vient des
