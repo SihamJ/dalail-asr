@@ -1,5 +1,8 @@
 {
  "recording": "hamzia",
+ "title": "الهمزية",
+ "audio": "https://pub-399f14501bad46a28b40e12c0215d805.r2.dev/hamzia.mp3",
+ "text_file": "hamzia_verses.json",
  "model": "rabah2026/wav2vec2-large-xlsr-53-arabic-quran-v_final",
  "units": "secondes",
  "lines": [
@@ -10,6 +13,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 0.16,
@@ -77,6 +81,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 14.62,
@@ -134,6 +139,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 29.44,
@@ -196,6 +202,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 44.2,
@@ -268,6 +275,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 59.24,
@@ -330,6 +338,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 74.08,
@@ -402,6 +411,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 88.88,
@@ -469,6 +479,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 103.96,
@@ -536,6 +547,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 119.0,
@@ -603,6 +615,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 133.98,
@@ -660,6 +673,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 149.32,
@@ -717,6 +731,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 164.48,
@@ -769,6 +784,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 179.8,
@@ -826,6 +842,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 195.46,
@@ -883,6 +900,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 210.2,
@@ -945,6 +963,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 225.78,
@@ -1004,10 +1023,64 @@
    "v": 17,
    "id": "hamzia_b015",
    "text": "وَتَدَاعَى إِيوَانُ كِسْـرَى وَلَولاَ\nآيَةٌ مِنْكَ مَا تَدَاعَى الْبِنَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 240.22,
+     "t1": 259.94,
+     "score": -0.297,
+     "words": [
+      {
+       "w": "وَتَدَاعَى",
+       "t0": 240.22,
+       "t1": 242.44
+      },
+      {
+       "w": "إِيوَانُ",
+       "t0": 243.22,
+       "t1": 245.58
+      },
+      {
+       "w": "كِسْـرَى",
+       "t0": 246.12,
+       "t1": 248.22
+      },
+      {
+       "w": "وَلَولاَ",
+       "t0": 248.38,
+       "t1": 250.5
+      },
+      {
+       "w": "آيَةٌ",
+       "t0": 250.66,
+       "t1": 252.1
+      },
+      {
+       "w": "مِنْكَ",
+       "t0": 252.66,
+       "t1": 253.7
+      },
+      {
+       "w": "مَا",
+       "t0": 253.92,
+       "t1": 254.12
+      },
+      {
+       "w": "تَدَاعَى",
+       "t0": 255.82,
+       "t1": 257.98
+      },
+      {
+       "w": "الْبِنَاءُ",
+       "t0": 258.36,
+       "t1": 259.94
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 18,
@@ -1016,6 +1089,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 260.94,
@@ -1078,6 +1152,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 281.24,
@@ -1140,6 +1215,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 301.7,
@@ -1204,10 +1280,64 @@
    "v": 21,
    "id": "hamzia_b019",
    "text": "فَهَنِيئاً بِهِ لِآمِنَةَ الْفَضْـ\nـلُ الذِي شُرِّفَتْ بِهِ حَوَّاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 325.26,
+     "t1": 336.66,
+     "score": -0.522,
+     "words": [
+      {
+       "w": "فَهَنِيئاً",
+       "t0": 325.26,
+       "t1": 326.06
+      },
+      {
+       "w": "بِهِ",
+       "t0": 326.14,
+       "t1": 326.74
+      },
+      {
+       "w": "لِآمِنَةَ",
+       "t0": 326.84,
+       "t1": 330.1
+      },
+      {
+       "w": "الْفَضْـ",
+       "t0": 330.28,
+       "t1": 332.1
+      },
+      {
+       "w": "ـلُ",
+       "t0": 332.38,
+       "t1": 332.58
+      },
+      {
+       "w": "الذِي",
+       "t0": 332.62,
+       "t1": 333.32
+      },
+      {
+       "w": "شُرِّفَتْ",
+       "t0": 333.74,
+       "t1": 334.58
+      },
+      {
+       "w": "بِهِ",
+       "t0": 334.68,
+       "t1": 334.8
+      },
+      {
+       "w": "حَوَّاءُ",
+       "t0": 334.98,
+       "t1": 336.66
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 22,
@@ -1216,6 +1346,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 341.84,
@@ -1283,6 +1414,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 367.8,
@@ -1352,10 +1484,59 @@
    "v": 24,
    "id": "hamzia_b022",
    "text": "وَأَتَتْ قَوْمَهَا بِأَفْضَلَ مِمَّا\nحَمَلَتْ قَبْلُ مَرْيَمُ الْعَذْرَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 391.82,
+     "t1": 410.14,
+     "score": -0.294,
+     "words": [
+      {
+       "w": "وَأَتَتْ",
+       "t0": 391.82,
+       "t1": 392.82
+      },
+      {
+       "w": "قَوْمَهَا",
+       "t0": 392.92,
+       "t1": 394.46
+      },
+      {
+       "w": "بِأَفْضَلَ",
+       "t0": 395.82,
+       "t1": 398.28
+      },
+      {
+       "w": "مِمَّا",
+       "t0": 398.7,
+       "t1": 401.82
+      },
+      {
+       "w": "حَمَلَتْ",
+       "t0": 402.08,
+       "t1": 404.32
+      },
+      {
+       "w": "قَبْلُ",
+       "t0": 404.44,
+       "t1": 405.58
+      },
+      {
+       "w": "مَرْيَمُ",
+       "t0": 405.92,
+       "t1": 407.96
+      },
+      {
+       "w": "الْعَذْرَاءُ",
+       "t0": 409.08,
+       "t1": 410.14
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 25,
@@ -1364,6 +1545,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 419.62,
@@ -1416,6 +1598,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 442.96,
@@ -1483,6 +1666,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 471.82,
@@ -1545,6 +1729,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 497.3,
@@ -1597,6 +1782,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 518.6,
@@ -1659,6 +1845,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 527.48,
@@ -1721,6 +1908,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 536.32,
@@ -1788,6 +1976,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 545.22,
@@ -1850,6 +2039,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 554.06,
@@ -1897,6 +2087,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 562.88,
@@ -1959,6 +2150,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 571.36,
@@ -2026,6 +2218,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 580.54,
@@ -2098,6 +2291,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 589.38,
@@ -2150,6 +2344,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 598.2,
@@ -2207,6 +2402,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 606.88,
@@ -2264,6 +2460,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 615.76,
@@ -2321,6 +2518,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 624.52,
@@ -2388,6 +2586,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 632.48,
@@ -2450,6 +2649,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 657.0,
@@ -2512,6 +2712,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 667.12,
@@ -2646,6 +2847,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 735.26,
@@ -2708,6 +2910,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 762.42,
@@ -2765,6 +2968,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 791.72,
@@ -2822,6 +3026,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 844.8,
@@ -2889,6 +3094,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 871.3,
@@ -2956,6 +3162,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 880.88,
@@ -3023,6 +3230,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 890.56,
@@ -3080,6 +3288,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 900.22,
@@ -3137,6 +3346,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 909.88,
@@ -3199,6 +3409,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 919.58,
@@ -3266,6 +3477,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 929.26,
@@ -3328,6 +3540,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 938.94,
@@ -3390,6 +3603,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 948.54,
@@ -3462,6 +3676,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 958.18,
@@ -3519,6 +3734,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 967.78,
@@ -3586,6 +3802,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 980.78,
@@ -3648,6 +3865,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 993.9,
@@ -3705,6 +3923,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1007.4,
@@ -3777,6 +3996,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1020.5,
@@ -3854,6 +4074,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1033.9,
@@ -3931,6 +4152,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1047.08,
@@ -3988,6 +4210,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1060.36,
@@ -4045,6 +4268,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1073.98,
@@ -4097,6 +4321,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1086.7,
@@ -4149,6 +4374,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1099.9,
@@ -4201,6 +4427,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1113.06,
@@ -4268,6 +4495,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1126.26,
@@ -4330,6 +4558,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1139.52,
@@ -4392,6 +4621,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1152.66,
@@ -4454,6 +4684,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1165.86,
@@ -4521,6 +4752,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1179.14,
@@ -4583,6 +4815,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1192.38,
@@ -4650,6 +4883,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1205.72,
@@ -4712,6 +4946,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1219.14,
@@ -4774,6 +5009,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1232.38,
@@ -4831,6 +5067,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1245.9,
@@ -4888,6 +5125,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1259.3,
@@ -4955,6 +5193,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1272.16,
@@ -5017,6 +5256,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1285.46,
@@ -5089,6 +5329,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1299.2,
@@ -5151,6 +5392,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1311.88,
@@ -5213,6 +5455,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1325.24,
@@ -5270,6 +5513,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1340.68,
@@ -5322,6 +5566,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1355.8,
@@ -5379,6 +5624,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1373.02,
@@ -5441,6 +5687,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1390.36,
@@ -5503,6 +5750,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1410.14,
@@ -5565,6 +5813,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1425.44,
@@ -5622,6 +5871,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1444.18,
@@ -5684,6 +5934,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1462.54,
@@ -5751,6 +6002,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1479.04,
@@ -5808,6 +6060,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1496.1,
@@ -5870,6 +6123,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1513.76,
@@ -5937,6 +6191,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1531.28,
@@ -5999,6 +6254,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1548.74,
@@ -6061,6 +6317,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1566.24,
@@ -6123,6 +6380,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1583.76,
@@ -6185,6 +6443,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1600.5,
@@ -6247,6 +6506,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1617.18,
@@ -6314,6 +6574,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1633.82,
@@ -6371,6 +6632,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1650.4,
@@ -6438,6 +6700,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1667.24,
@@ -6500,6 +6763,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1684.32,
@@ -6562,6 +6826,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1701.44,
@@ -6634,6 +6899,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1718.48,
@@ -6701,6 +6967,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1735.68,
@@ -6768,6 +7035,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1754.34,
@@ -6830,6 +7098,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1770.2,
@@ -6897,6 +7166,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1787.74,
@@ -6959,6 +7229,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1805.36,
@@ -7026,6 +7297,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1822.94,
@@ -7103,6 +7375,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1840.9,
@@ -7160,6 +7433,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1858.46,
@@ -7232,6 +7506,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1878.64,
@@ -7299,6 +7574,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1896.72,
@@ -7366,6 +7642,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1911.32,
@@ -7428,6 +7705,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1919.6,
@@ -7485,6 +7763,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1927.66,
@@ -7562,6 +7841,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1935.86,
@@ -7624,6 +7904,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1944.02,
@@ -7686,6 +7967,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1952.24,
@@ -7753,6 +8035,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1960.02,
@@ -7815,6 +8098,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1968.58,
@@ -7882,6 +8166,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1977.02,
@@ -7944,6 +8229,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1985.42,
@@ -8016,6 +8302,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 1993.7,
@@ -8073,6 +8360,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2002.04,
@@ -8140,6 +8428,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2010.34,
@@ -8192,6 +8481,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2018.68,
@@ -8259,6 +8549,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2026.96,
@@ -8326,6 +8617,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2035.24,
@@ -8378,6 +8670,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2043.48,
@@ -8435,6 +8728,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2051.76,
@@ -8497,6 +8791,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2059.94,
@@ -8559,6 +8854,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2067.82,
@@ -8621,6 +8917,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2076.44,
@@ -8693,6 +8990,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2084.68,
@@ -8750,6 +9048,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2092.88,
@@ -8812,6 +9111,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2101.3,
@@ -8874,6 +9174,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2121.48,
@@ -8936,6 +9237,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2142.42,
@@ -9000,10 +9302,69 @@
    "v": 146,
    "id": "hamzia_b144",
    "text": "كُلُّ فَضْلٍ فِي الْعَالَمِينَ فَمِنْ فَضْـ\nـلِ النَّبِيِّ اسْتَعَارَهُ الْفُضَلاَءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 2163.64,
+     "t1": 2181.72,
+     "score": -0.357,
+     "words": [
+      {
+       "w": "كُلُّ",
+       "t0": 2163.64,
+       "t1": 2164.4
+      },
+      {
+       "w": "فَضْلٍ",
+       "t0": 2164.52,
+       "t1": 2165.26
+      },
+      {
+       "w": "فِي",
+       "t0": 2165.38,
+       "t1": 2165.5
+      },
+      {
+       "w": "الْعَالَمِينَ",
+       "t0": 2166.1,
+       "t1": 2166.98
+      },
+      {
+       "w": "فَمِنْ",
+       "t0": 2167.1,
+       "t1": 2167.84
+      },
+      {
+       "w": "فَضْـ",
+       "t0": 2168.0,
+       "t1": 2168.56
+      },
+      {
+       "w": "ـلِ",
+       "t0": 2168.6,
+       "t1": 2169.0
+      },
+      {
+       "w": "النَّبِيِّ",
+       "t0": 2170.42,
+       "t1": 2175.9
+      },
+      {
+       "w": "اسْتَعَارَهُ",
+       "t0": 2176.76,
+       "t1": 2179.54
+      },
+      {
+       "w": "الْفُضَلاَءُ",
+       "t0": 2180.52,
+       "t1": 2181.72
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 147,
@@ -9012,6 +9373,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2184.34,
@@ -9089,6 +9451,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2205.5,
@@ -9148,10 +9511,59 @@
    "v": 149,
    "id": "hamzia_b147",
    "text": "وَدَعَا لِلأَنَامِ إِذْ دَهَمَتْهُمْ\nسَنَةٌ مِنْ مُـحُولِهَا شَهْبَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 2232.14,
+     "t1": 2246.04,
+     "score": -0.363,
+     "words": [
+      {
+       "w": "وَدَعَا",
+       "t0": 2232.14,
+       "t1": 2232.78
+      },
+      {
+       "w": "لِلأَنَامِ",
+       "t0": 2232.84,
+       "t1": 2233.86
+      },
+      {
+       "w": "إِذْ",
+       "t0": 2233.98,
+       "t1": 2234.34
+      },
+      {
+       "w": "دَهَمَتْهُمْ",
+       "t0": 2234.88,
+       "t1": 2237.52
+      },
+      {
+       "w": "سَنَةٌ",
+       "t0": 2237.82,
+       "t1": 2239.34
+      },
+      {
+       "w": "مِنْ",
+       "t0": 2240.12,
+       "t1": 2241.36
+      },
+      {
+       "w": "مُـحُولِهَا",
+       "t0": 2241.44,
+       "t1": 2243.92
+      },
+      {
+       "w": "شَهْبَاءُ",
+       "t0": 2245.04,
+       "t1": 2246.04
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 150,
@@ -9160,6 +9572,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2251.86,
@@ -9217,6 +9630,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2273.84,
@@ -9279,6 +9693,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2292.76,
@@ -9383,6 +9798,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2340.06,
@@ -9445,6 +9861,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2396.76,
@@ -9502,6 +9919,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2414.24,
@@ -9606,6 +10024,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2467.72,
@@ -9668,6 +10087,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2481.78,
@@ -9735,6 +10155,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2512.64,
@@ -9797,6 +10218,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2532.98,
@@ -9859,6 +10281,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2548.4,
@@ -9926,6 +10349,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2578.6,
@@ -9988,6 +10412,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2587.52,
@@ -10060,6 +10485,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2596.5,
@@ -10132,6 +10558,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2605.48,
@@ -10194,6 +10621,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2614.5,
@@ -10246,6 +10674,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2623.38,
@@ -10298,6 +10727,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2632.34,
@@ -10355,6 +10785,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2641.24,
@@ -10412,6 +10843,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2650.02,
@@ -10484,6 +10916,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2658.32,
@@ -10546,6 +10979,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2668.28,
@@ -10618,6 +11052,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2677.04,
@@ -10685,6 +11120,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2686.0,
@@ -10742,6 +11178,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2694.88,
@@ -10809,6 +11246,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2703.64,
@@ -10871,6 +11309,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2712.74,
@@ -10933,6 +11372,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2728.16,
@@ -10985,6 +11425,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2743.98,
@@ -11052,6 +11493,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2760.02,
@@ -11109,6 +11551,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2776.28,
@@ -11181,6 +11624,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2792.46,
@@ -11248,6 +11692,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2808.9,
@@ -11310,6 +11755,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2817.46,
@@ -11382,6 +11828,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2826.06,
@@ -11446,10 +11893,74 @@
    "v": 185,
    "id": "hamzia_b183",
    "text": "فَهْيَ قُطْبُ الْمِحْرَابِ وَالْحَرْبِ كَمْ دَا\nرَتْ عَلَيْهَا فِي طَاعَةٍ أَرْحَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 2834.64,
+     "t1": 2842.3,
+     "score": -0.556,
+     "words": [
+      {
+       "w": "فَهْيَ",
+       "t0": 2834.64,
+       "t1": 2835.02
+      },
+      {
+       "w": "قُطْبُ",
+       "t0": 2835.18,
+       "t1": 2835.46
+      },
+      {
+       "w": "الْمِحْرَابِ",
+       "t0": 2835.6,
+       "t1": 2836.9
+      },
+      {
+       "w": "وَالْحَرْبِ",
+       "t0": 2837.06,
+       "t1": 2837.96
+      },
+      {
+       "w": "كَمْ",
+       "t0": 2838.16,
+       "t1": 2838.38
+      },
+      {
+       "w": "دَا",
+       "t0": 2838.52,
+       "t1": 2838.68
+      },
+      {
+       "w": "رَتْ",
+       "t0": 2838.94,
+       "t1": 2839.18
+      },
+      {
+       "w": "عَلَيْهَا",
+       "t0": 2839.24,
+       "t1": 2839.8
+      },
+      {
+       "w": "فِي",
+       "t0": 2840.02,
+       "t1": 2840.12
+      },
+      {
+       "w": "طَاعَةٍ",
+       "t0": 2840.28,
+       "t1": 2841.46
+      },
+      {
+       "w": "أَرْحَاءُ",
+       "t0": 2841.78,
+       "t1": 2842.3
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 186,
@@ -11458,6 +11969,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2841.9,
@@ -11530,6 +12042,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2851.7,
@@ -11587,6 +12100,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2860.22,
@@ -11644,6 +12158,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2868.74,
@@ -11706,6 +12221,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2877.12,
@@ -11773,6 +12289,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2885.88,
@@ -11835,6 +12352,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2894.6,
@@ -11892,6 +12410,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2903.38,
@@ -11954,6 +12473,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2912.18,
@@ -12011,6 +12531,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2921.02,
@@ -12073,6 +12594,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2929.68,
@@ -12135,6 +12657,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2938.5,
@@ -12187,6 +12710,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2947.52,
@@ -12254,6 +12778,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2960.1,
@@ -12316,6 +12841,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2972.6,
@@ -12378,6 +12904,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2985.3,
@@ -12440,6 +12967,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 2997.92,
@@ -12502,6 +13030,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3010.62,
@@ -12559,6 +13088,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3023.28,
@@ -12621,6 +13151,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3036.02,
@@ -12678,6 +13209,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3048.8,
@@ -12745,6 +13277,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3061.74,
@@ -12807,6 +13340,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3074.64,
@@ -12869,6 +13403,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3087.68,
@@ -12926,6 +13461,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3100.7,
@@ -12988,6 +13524,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3113.76,
@@ -13050,6 +13587,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3126.68,
@@ -13112,6 +13650,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3139.8,
@@ -13174,6 +13713,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3152.9,
@@ -13231,6 +13771,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3165.02,
@@ -13303,6 +13844,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3173.66,
@@ -13370,6 +13912,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3182.04,
@@ -13417,6 +13960,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3190.38,
@@ -13484,6 +14028,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3198.78,
@@ -13546,6 +14091,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3207.04,
@@ -13613,6 +14159,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3215.2,
@@ -13675,6 +14222,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3223.4,
@@ -13737,6 +14285,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3231.66,
@@ -13799,6 +14348,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3239.96,
@@ -13856,6 +14406,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3248.34,
@@ -13928,6 +14479,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3256.74,
@@ -13990,6 +14542,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3265.02,
@@ -14042,6 +14595,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3273.44,
@@ -14104,6 +14658,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3283.38,
@@ -14156,6 +14711,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3302.66,
@@ -14218,6 +14774,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3321.82,
@@ -14280,6 +14837,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3341.76,
@@ -14347,6 +14905,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3360.38,
@@ -14414,6 +14973,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3381.78,
@@ -14481,6 +15041,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3401.76,
@@ -14533,6 +15094,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3422.48,
@@ -14592,19 +15154,221 @@
    "v": 237,
    "id": "hamzia_b235",
    "text": "مِثْلَ مَا قَالَتِ الْيَهُودُ وَكُـلٌّ\nلَزِمَتْهُ مَقَالَةٌ شَنْعَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 3450.32,
+     "t1": 3459.56,
+     "score": -0.608,
+     "words": [
+      {
+       "w": "مِثْلَ",
+       "t0": 3450.32,
+       "t1": 3451.66
+      },
+      {
+       "w": "مَا",
+       "t0": 3451.74,
+       "t1": 3451.96
+      },
+      {
+       "w": "قَالَتِ",
+       "t0": 3452.14,
+       "t1": 3453.62
+      },
+      {
+       "w": "الْيَهُودُ",
+       "t0": 3453.72,
+       "t1": 3455.0
+      },
+      {
+       "w": "وَكُـلٌّ",
+       "t0": 3455.16,
+       "t1": 3456.2
+      },
+      {
+       "w": "لَزِمَتْهُ",
+       "t0": 3456.52,
+       "t1": 3457.74
+      },
+      {
+       "w": "مَقَالَةٌ",
+       "t0": 3457.84,
+       "t1": 3458.38
+      },
+      {
+       "w": "شَنْعَاءُ",
+       "t0": 3458.66,
+       "t1": 3459.56
+      }
+     ]
+    },
+    {
+     "t0": 3465.66,
+     "t1": 3475.1,
+     "score": -0.653,
+     "words": [
+      {
+       "w": "مِثْلَ",
+       "t0": 3465.66,
+       "t1": 3466.02
+      },
+      {
+       "w": "مَا",
+       "t0": 3466.14,
+       "t1": 3466.28
+      },
+      {
+       "w": "قَالَتِ",
+       "t0": 3466.56,
+       "t1": 3466.88
+      },
+      {
+       "w": "الْيَهُودُ",
+       "t0": 3466.9,
+       "t1": 3469.06
+      },
+      {
+       "w": "وَكُـلٌّ",
+       "t0": 3469.1,
+       "t1": 3469.82
+      },
+      {
+       "w": "لَزِمَتْهُ",
+       "t0": 3470.58,
+       "t1": 3472.46
+      },
+      {
+       "w": "مَقَالَةٌ",
+       "t0": 3472.86,
+       "t1": 3473.86
+      },
+      {
+       "w": "شَنْعَاءُ",
+       "t0": 3474.14,
+       "t1": 3475.1
+      }
+     ]
+    },
+    {
+     "t0": 3503.18,
+     "t1": 3509.14,
+     "score": -0.954,
+     "words": [
+      {
+       "w": "مِثْلَ",
+       "t0": 3503.18,
+       "t1": 3503.68
+      },
+      {
+       "w": "مَا",
+       "t0": 3504.02,
+       "t1": 3504.12
+      },
+      {
+       "w": "قَالَتِ",
+       "t0": 3504.2,
+       "t1": 3504.54
+      },
+      {
+       "w": "الْيَهُودُ",
+       "t0": 3504.6,
+       "t1": 3506.02
+      },
+      {
+       "w": "وَكُـلٌّ",
+       "t0": 3506.16,
+       "t1": 3506.66
+      },
+      {
+       "w": "لَزِمَتْهُ",
+       "t0": 3506.78,
+       "t1": 3507.98
+      },
+      {
+       "w": "مَقَالَةٌ",
+       "t0": 3508.3,
+       "t1": 3508.6
+      },
+      {
+       "w": "شَنْعَاءُ",
+       "t0": 3508.66,
+       "t1": 3509.14
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 238,
    "id": "hamzia_b236",
    "text": "إِذْْ هُمُ اسْتَقْرَءُوا الْبَدَاءَ وَكَمْ سَــــا\nقَ وَبَالاً إِلَيْهِمُ اسْتِقْرَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 3514.12,
+     "t1": 3522.32,
+     "score": -1.048,
+     "words": [
+      {
+       "w": "إِذْْ",
+       "t0": 3514.12,
+       "t1": 3514.5
+      },
+      {
+       "w": "هُمُ",
+       "t0": 3515.7,
+       "t1": 3515.96
+      },
+      {
+       "w": "اسْتَقْرَءُوا",
+       "t0": 3516.02,
+       "t1": 3517.36
+      },
+      {
+       "w": "الْبَدَاءَ",
+       "t0": 3517.42,
+       "t1": 3518.18
+      },
+      {
+       "w": "وَكَمْ",
+       "t0": 3518.34,
+       "t1": 3518.56
+      },
+      {
+       "w": "سَــــا",
+       "t0": 3518.6,
+       "t1": 3518.98
+      },
+      {
+       "w": "قَ",
+       "t0": 3519.08,
+       "t1": 3519.12
+      },
+      {
+       "w": "وَبَالاً",
+       "t0": 3519.2,
+       "t1": 3519.54
+      },
+      {
+       "w": "إِلَيْهِمُ",
+       "t0": 3519.56,
+       "t1": 3520.28
+      },
+      {
+       "w": "اسْتِقْرَاءُ",
+       "t0": 3520.4,
+       "t1": 3522.32
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 239,
@@ -14613,6 +15377,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -14622,6 +15387,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3527.76,
@@ -14694,6 +15460,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3557.86,
@@ -14766,6 +15533,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -14775,6 +15543,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -14784,6 +15553,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3583.28,
@@ -14851,6 +15621,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3668.5,
@@ -14918,6 +15689,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3681.7,
@@ -14995,6 +15767,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3695.18,
@@ -15067,6 +15840,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3708.38,
@@ -15139,6 +15913,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3722.18,
@@ -15201,6 +15976,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3735.66,
@@ -15263,6 +16039,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3749.18,
@@ -15325,6 +16102,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3762.76,
@@ -15382,6 +16160,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3775.42,
@@ -15449,6 +16228,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3789.18,
@@ -15516,6 +16296,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3802.84,
@@ -15573,6 +16354,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3816.38,
@@ -15635,6 +16417,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3830.36,
@@ -15689,10 +16472,59 @@
    "v": 258,
    "id": "hamzia_b256",
    "text": "حَالَفُوهُمْ وَخَالَفُوهُمْ وَلَمْ أَدْ\nرِ لِمَاذَا تَخَالَفَ الْحُلَفَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 3844.3,
+     "t1": 3857.86,
+     "score": -0.332,
+     "words": [
+      {
+       "w": "حَالَفُوهُمْ",
+       "t0": 3844.3,
+       "t1": 3846.62
+      },
+      {
+       "w": "وَخَالَفُوهُمْ",
+       "t0": 3846.76,
+       "t1": 3849.32
+      },
+      {
+       "w": "وَلَمْ",
+       "t0": 3849.44,
+       "t1": 3850.48
+      },
+      {
+       "w": "أَدْ",
+       "t0": 3850.58,
+       "t1": 3850.82
+      },
+      {
+       "w": "رِ",
+       "t0": 3851.32,
+       "t1": 3851.4
+      },
+      {
+       "w": "لِمَاذَا",
+       "t0": 3851.76,
+       "t1": 3853.18
+      },
+      {
+       "w": "تَخَالَفَ",
+       "t0": 3853.72,
+       "t1": 3855.38
+      },
+      {
+       "w": "الْحُلَفَاءُ",
+       "t0": 3855.84,
+       "t1": 3857.86
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 259,
@@ -15701,6 +16533,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3858.5,
@@ -15763,6 +16596,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3872.7,
@@ -15820,6 +16654,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3881.48,
@@ -15882,6 +16717,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3890.1,
@@ -15939,6 +16775,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3898.76,
@@ -15996,6 +16833,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3907.3,
@@ -16055,10 +16893,64 @@
    "v": 265,
    "id": "hamzia_b263",
    "text": "كُلُّ رِجْسٍ يَزِيدُهُ الْخُلُـــقُ السُّو\nءُ سَفَاهاً وَالْمِلَّةُ الْعَوْجَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 3915.92,
+     "t1": 3923.54,
+     "score": -0.533,
+     "words": [
+      {
+       "w": "كُلُّ",
+       "t0": 3915.92,
+       "t1": 3916.22
+      },
+      {
+       "w": "رِجْسٍ",
+       "t0": 3916.44,
+       "t1": 3916.8
+      },
+      {
+       "w": "يَزِيدُهُ",
+       "t0": 3916.96,
+       "t1": 3918.42
+      },
+      {
+       "w": "الْخُلُـــقُ",
+       "t0": 3918.46,
+       "t1": 3919.52
+      },
+      {
+       "w": "السُّو",
+       "t0": 3919.62,
+       "t1": 3919.96
+      },
+      {
+       "w": "ءُ",
+       "t0": 3920.18,
+       "t1": 3920.28
+      },
+      {
+       "w": "سَفَاهاً",
+       "t0": 3920.44,
+       "t1": 3921.28
+      },
+      {
+       "w": "وَالْمِلَّةُ",
+       "t0": 3921.3,
+       "t1": 3922.68
+      },
+      {
+       "w": "الْعَوْجَاءُ",
+       "t0": 3922.98,
+       "t1": 3923.54
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 266,
@@ -16067,6 +16959,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3923.14,
@@ -16134,6 +17027,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3933.04,
@@ -16211,6 +17105,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3941.48,
@@ -16278,6 +17173,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3950.06,
@@ -16350,6 +17246,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3958.54,
@@ -16407,6 +17304,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3967.06,
@@ -16474,6 +17372,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3975.68,
@@ -16541,6 +17440,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3984.16,
@@ -16603,6 +17503,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 3992.6,
@@ -16660,6 +17561,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4001.14,
@@ -16717,6 +17619,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4024.0,
@@ -16774,6 +17677,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4034.82,
@@ -16831,6 +17735,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4065.72,
@@ -16955,6 +17860,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4104.38,
@@ -17012,6 +17918,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4131.52,
@@ -17116,6 +18023,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4162.64,
@@ -17178,6 +18086,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4191.88,
@@ -17292,6 +18201,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4245.12,
@@ -17473,6 +18383,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4361.96,
@@ -17535,6 +18446,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4381.92,
@@ -17594,19 +18506,127 @@
    "v": 286,
    "id": "hamzia_b284",
    "text": "وَعَدَتْنِي ازْدِيَارَهُ الْعَامَ وَجْنَا\nءُ وَمَنَّتْ بِوَعْدِهَا الْوَجْنَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 4403.72,
+     "t1": 4419.74,
+     "score": -0.352,
+     "words": [
+      {
+       "w": "وَعَدَتْنِي",
+       "t0": 4403.72,
+       "t1": 4404.92
+      },
+      {
+       "w": "ازْدِيَارَهُ",
+       "t0": 4405.12,
+       "t1": 4408.36
+      },
+      {
+       "w": "الْعَامَ",
+       "t0": 4408.46,
+       "t1": 4409.64
+      },
+      {
+       "w": "وَجْنَا",
+       "t0": 4409.94,
+       "t1": 4410.98
+      },
+      {
+       "w": "ءُ",
+       "t0": 4412.12,
+       "t1": 4412.22
+      },
+      {
+       "w": "وَمَنَّتْ",
+       "t0": 4412.24,
+       "t1": 4415.22
+      },
+      {
+       "w": "بِوَعْدِهَا",
+       "t0": 4415.46,
+       "t1": 4417.6
+      },
+      {
+       "w": "الْوَجْنَاءُ",
+       "t0": 4417.72,
+       "t1": 4419.74
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 287,
    "id": "hamzia_b285",
    "text": "أَفَلاَ أَنْطَوِي لَهَا فِي اقْتِضَائِيـ\nـهِ لِتُطْوَى مَا بَيْنَنَا الأَفْلاَءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 4424.0,
+     "t1": 4438.5,
+     "score": -0.42,
+     "words": [
+      {
+       "w": "أَفَلاَ",
+       "t0": 4424.0,
+       "t1": 4424.86
+      },
+      {
+       "w": "أَنْطَوِي",
+       "t0": 4425.18,
+       "t1": 4426.68
+      },
+      {
+       "w": "لَهَا",
+       "t0": 4427.36,
+       "t1": 4427.9
+      },
+      {
+       "w": "فِي",
+       "t0": 4429.1,
+       "t1": 4429.26
+      },
+      {
+       "w": "اقْتِضَائِيـ",
+       "t0": 4429.68,
+       "t1": 4431.4
+      },
+      {
+       "w": "ـهِ",
+       "t0": 4432.8,
+       "t1": 4433.3
+      },
+      {
+       "w": "لِتُطْوَى",
+       "t0": 4433.42,
+       "t1": 4434.82
+      },
+      {
+       "w": "مَا",
+       "t0": 4435.94,
+       "t1": 4436.52
+      },
+      {
+       "w": "بَيْنَنَا",
+       "t0": 4437.24,
+       "t1": 4437.74
+      },
+      {
+       "w": "الأَفْلاَءُ",
+       "t0": 4437.76,
+       "t1": 4438.5
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 288,
@@ -17615,6 +18635,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4442.74,
@@ -17677,6 +18698,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4463.78,
@@ -17749,6 +18771,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4484.92,
@@ -17801,6 +18824,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4504.74,
@@ -17863,6 +18887,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4526.42,
@@ -17915,6 +18940,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4546.88,
@@ -17972,6 +18998,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4568.2,
@@ -18026,10 +19053,64 @@
    "v": 295,
    "id": "hamzia_b293",
    "text": "لاَحَ بِالدَّهْنَوَيْنِ بَدْرٌ لَهَا بَعْـ\nـدَ حُنَيْنٍ وَحَنَّتِ الصَّفْرَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 4589.88,
+     "t1": 4610.36,
+     "score": -0.295,
+     "words": [
+      {
+       "w": "لاَحَ",
+       "t0": 4589.88,
+       "t1": 4590.94
+      },
+      {
+       "w": "بِالدَّهْنَوَيْنِ",
+       "t0": 4591.28,
+       "t1": 4595.5
+      },
+      {
+       "w": "بَدْرٌ",
+       "t0": 4596.72,
+       "t1": 4597.74
+      },
+      {
+       "w": "لَهَا",
+       "t0": 4597.96,
+       "t1": 4598.52
+      },
+      {
+       "w": "بَعْـ",
+       "t0": 4599.42,
+       "t1": 4599.84
+      },
+      {
+       "w": "ـدَ",
+       "t0": 4600.54,
+       "t1": 4600.86
+      },
+      {
+       "w": "حُنَيْنٍ",
+       "t0": 4601.68,
+       "t1": 4603.12
+      },
+      {
+       "w": "وَحَنَّتِ",
+       "t0": 4604.38,
+       "t1": 4606.8
+      },
+      {
+       "w": "الصَّفْرَاءُ",
+       "t0": 4607.42,
+       "t1": 4610.36
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 296,
@@ -18038,6 +19119,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4612.74,
@@ -18100,6 +19182,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4635.04,
@@ -18152,6 +19235,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4655.74,
@@ -18224,6 +19308,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4678.46,
@@ -18281,6 +19366,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4700.2,
@@ -18343,6 +19429,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4718.2,
@@ -18405,6 +19492,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4736.4,
@@ -18477,6 +19565,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4754.62,
@@ -18539,6 +19628,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4775.06,
@@ -18596,6 +19686,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4792.62,
@@ -18653,6 +19744,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4810.46,
@@ -18720,6 +19812,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4829.22,
@@ -18782,6 +19875,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4847.6,
@@ -18844,6 +19938,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4862.02,
@@ -18906,6 +20001,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4876.48,
@@ -18973,6 +20069,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4891.1,
@@ -19025,6 +20122,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4905.72,
@@ -19087,6 +20185,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4920.36,
@@ -19154,6 +20253,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4935.04,
@@ -19221,6 +20321,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4949.62,
@@ -19283,6 +20384,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 4976.28,
@@ -19350,6 +20452,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5010.4,
@@ -19417,6 +20520,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5042.26,
@@ -19474,6 +20578,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5054.04,
@@ -19523,28 +20628,244 @@
    "v": 320,
    "id": "hamzia_b318",
    "text": "وَبُكَاءٌ يُغْرِيهِ بِالْعَيْنِ مَدٌّ\nوَنَحِيبٌ يَحُثُّهُ اسْتِعْلاَءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 5096.24,
+     "t1": 5111.76,
+     "score": -0.364,
+     "words": [
+      {
+       "w": "وَبُكَاءٌ",
+       "t0": 5096.24,
+       "t1": 5097.88
+      },
+      {
+       "w": "يُغْرِيهِ",
+       "t0": 5098.58,
+       "t1": 5099.92
+      },
+      {
+       "w": "بِالْعَيْنِ",
+       "t0": 5100.28,
+       "t1": 5103.06
+      },
+      {
+       "w": "مَدٌّ",
+       "t0": 5103.92,
+       "t1": 5105.26
+      },
+      {
+       "w": "وَنَحِيبٌ",
+       "t0": 5106.38,
+       "t1": 5107.8
+      },
+      {
+       "w": "يَحُثُّهُ",
+       "t0": 5107.96,
+       "t1": 5110.48
+      },
+      {
+       "w": "اسْتِعْلاَءُ",
+       "t0": 5110.58,
+       "t1": 5111.76
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 321,
    "id": "hamzia_b319",
    "text": "وَجُسُومٌ كَأَنَّمَا رَحَضَتْهَا\nمِنْ عَظِيمِ الْمَهَابَةِ الرُّحَضَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 5125.84,
+     "t1": 5141.52,
+     "score": -0.375,
+     "words": [
+      {
+       "w": "وَجُسُومٌ",
+       "t0": 5125.84,
+       "t1": 5127.48
+      },
+      {
+       "w": "كَأَنَّمَا",
+       "t0": 5128.18,
+       "t1": 5130.04
+      },
+      {
+       "w": "رَحَضَتْهَا",
+       "t0": 5132.68,
+       "t1": 5134.88
+      },
+      {
+       "w": "مِنْ",
+       "t0": 5136.48,
+       "t1": 5137.38
+      },
+      {
+       "w": "عَظِيمِ",
+       "t0": 5137.68,
+       "t1": 5139.3
+      },
+      {
+       "w": "الْمَهَابَةِ",
+       "t0": 5139.32,
+       "t1": 5140.68
+      },
+      {
+       "w": "الرُّحَضَاءُ",
+       "t0": 5140.78,
+       "t1": 5141.52
+      }
+     ]
+    },
+    {
+     "t0": 5161.1,
+     "t1": 5177.04,
+     "score": -0.387,
+     "words": [
+      {
+       "w": "وَجُسُومٌ",
+       "t0": 5161.1,
+       "t1": 5162.7
+      },
+      {
+       "w": "كَأَنَّمَا",
+       "t0": 5162.94,
+       "t1": 5164.74
+      },
+      {
+       "w": "رَحَضَتْهَا",
+       "t0": 5167.44,
+       "t1": 5169.66
+      },
+      {
+       "w": "مِنْ",
+       "t0": 5170.34,
+       "t1": 5171.0
+      },
+      {
+       "w": "عَظِيمِ",
+       "t0": 5171.08,
+       "t1": 5172.04
+      },
+      {
+       "w": "الْمَهَابَةِ",
+       "t0": 5172.16,
+       "t1": 5175.04
+      },
+      {
+       "w": "الرُّحَضَاءُ",
+       "t0": 5175.44,
+       "t1": 5177.04
+      }
+     ]
+    },
+    {
+     "t0": 5189.86,
+     "t1": 5206.94,
+     "score": -0.396,
+     "words": [
+      {
+       "w": "وَجُسُومٌ",
+       "t0": 5189.86,
+       "t1": 5191.2
+      },
+      {
+       "w": "كَأَنَّمَا",
+       "t0": 5192.74,
+       "t1": 5194.6
+      },
+      {
+       "w": "رَحَضَتْهَا",
+       "t0": 5196.58,
+       "t1": 5198.86
+      },
+      {
+       "w": "مِنْ",
+       "t0": 5198.94,
+       "t1": 5199.36
+      },
+      {
+       "w": "عَظِيمِ",
+       "t0": 5200.6,
+       "t1": 5201.92
+      },
+      {
+       "w": "الْمَهَابَةِ",
+       "t0": 5202.06,
+       "t1": 5204.5
+      },
+      {
+       "w": "الرُّحَضَاءُ",
+       "t0": 5205.1,
+       "t1": 5206.94
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 322,
    "id": "hamzia_b320",
    "text": "وَوُجُوهٌ كَأَنَّما أَلْبَسَتْهَا\nمِنْ حَيَاءٍ أَلْوَانَهَا الْحِرْبَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 5206.52,
+     "t1": 5213.22,
+     "score": -1.128,
+     "words": [
+      {
+       "w": "وَوُجُوهٌ",
+       "t0": 5206.52,
+       "t1": 5207.26
+      },
+      {
+       "w": "كَأَنَّما",
+       "t0": 5207.64,
+       "t1": 5210.52
+      },
+      {
+       "w": "أَلْبَسَتْهَا",
+       "t0": 5210.56,
+       "t1": 5211.32
+      },
+      {
+       "w": "مِنْ",
+       "t0": 5211.4,
+       "t1": 5211.56
+      },
+      {
+       "w": "حَيَاءٍ",
+       "t0": 5211.66,
+       "t1": 5211.92
+      },
+      {
+       "w": "أَلْوَانَهَا",
+       "t0": 5212.04,
+       "t1": 5212.72
+      },
+      {
+       "w": "الْحِرْبَاءُ",
+       "t0": 5212.84,
+       "t1": 5213.22
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 323,
@@ -19553,6 +20874,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -19562,6 +20884,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5215.08,
@@ -19624,6 +20947,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5229.6,
@@ -19686,6 +21010,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5244.1,
@@ -19753,6 +21078,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5258.76,
@@ -19815,6 +21141,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5273.4,
@@ -19867,6 +21194,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5288.1,
@@ -19929,6 +21257,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5302.72,
@@ -20001,6 +21330,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5317.24,
@@ -20063,6 +21393,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5332.32,
@@ -20120,6 +21451,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5346.92,
@@ -20177,6 +21509,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5361.56,
@@ -20239,6 +21572,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5376.42,
@@ -20291,6 +21625,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5391.34,
@@ -20358,6 +21693,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5406.2,
@@ -20415,6 +21751,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5421.12,
@@ -20482,6 +21819,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5436.04,
@@ -20544,6 +21882,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5450.76,
@@ -20606,6 +21945,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5460.1,
@@ -20673,6 +22013,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5469.4,
@@ -20730,6 +22071,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5478.68,
@@ -20792,6 +22134,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5487.76,
@@ -20854,6 +22197,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5497.06,
@@ -20911,6 +22255,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5506.18,
@@ -20973,6 +22318,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5515.4,
@@ -21045,6 +22391,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5524.5,
@@ -21107,6 +22454,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5533.26,
@@ -21159,6 +22507,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5542.66,
@@ -21216,6 +22565,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5551.7,
@@ -21283,6 +22633,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5560.7,
@@ -21330,6 +22681,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5569.66,
@@ -21402,6 +22754,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5578.6,
@@ -21459,6 +22812,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5587.62,
@@ -21516,6 +22870,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5596.6,
@@ -21583,6 +22938,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5605.56,
@@ -21650,6 +23006,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5614.34,
@@ -21717,6 +23074,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5623.18,
@@ -21784,6 +23142,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5631.9,
@@ -21841,6 +23200,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5640.56,
@@ -21913,6 +23273,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5649.22,
@@ -21980,6 +23341,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5657.9,
@@ -22042,6 +23404,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5666.52,
@@ -22099,6 +23462,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5674.78,
@@ -22171,6 +23535,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5683.78,
@@ -22243,6 +23608,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5692.58,
@@ -22312,10 +23678,74 @@
    "v": 368,
    "id": "hamzia_b366",
    "text": "حَفَرَ الْبِئْرَ جَهَّزَ الْجَيْشَ أَهْدَى الْـ\nـهَدْيَ لَمَّا أَنْ صَدَّهُ الأَعْدَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 5701.94,
+     "t1": 5709.9,
+     "score": -0.732,
+     "words": [
+      {
+       "w": "حَفَرَ",
+       "t0": 5701.94,
+       "t1": 5702.06
+      },
+      {
+       "w": "الْبِئْرَ",
+       "t0": 5702.14,
+       "t1": 5702.6
+      },
+      {
+       "w": "جَهَّزَ",
+       "t0": 5702.82,
+       "t1": 5704.04
+      },
+      {
+       "w": "الْجَيْشَ",
+       "t0": 5704.08,
+       "t1": 5704.84
+      },
+      {
+       "w": "أَهْدَى",
+       "t0": 5705.04,
+       "t1": 5705.54
+      },
+      {
+       "w": "الْـ",
+       "t0": 5705.58,
+       "t1": 5705.72
+      },
+      {
+       "w": "ـهَدْيَ",
+       "t0": 5705.74,
+       "t1": 5706.26
+      },
+      {
+       "w": "لَمَّا",
+       "t0": 5706.38,
+       "t1": 5706.8
+      },
+      {
+       "w": "أَنْ",
+       "t0": 5706.94,
+       "t1": 5707.02
+      },
+      {
+       "w": "صَدَّهُ",
+       "t0": 5707.18,
+       "t1": 5708.42
+      },
+      {
+       "w": "الأَعْدَاءُ",
+       "t0": 5708.72,
+       "t1": 5709.9
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 369,
@@ -22324,6 +23754,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5710.22,
@@ -22396,6 +23827,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5718.9,
@@ -22458,6 +23890,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5727.64,
@@ -22515,6 +23948,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5736.42,
@@ -22577,6 +24011,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5745.24,
@@ -22639,6 +24074,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5754.1,
@@ -22711,6 +24147,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5762.86,
@@ -22768,6 +24205,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5780.98,
@@ -22825,6 +24263,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5817.56,
@@ -22939,6 +24378,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5880.7,
@@ -22993,10 +24433,69 @@
    "v": 379,
    "id": "hamzia_b377",
    "text": "وَابْنِ عَوْفٍ مَنْ هَوَّنَتْ نَفْسُهُ الدُّنْـ\nـيَا بِبَذْلٍ يَمُدُّهُ إِثْرَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 5915.66,
+     "t1": 5926.74,
+     "score": -0.771,
+     "words": [
+      {
+       "w": "وَابْنِ",
+       "t0": 5915.66,
+       "t1": 5916.0
+      },
+      {
+       "w": "عَوْفٍ",
+       "t0": 5916.18,
+       "t1": 5916.86
+      },
+      {
+       "w": "مَنْ",
+       "t0": 5917.18,
+       "t1": 5917.54
+      },
+      {
+       "w": "هَوَّنَتْ",
+       "t0": 5917.58,
+       "t1": 5918.6
+      },
+      {
+       "w": "نَفْسُهُ",
+       "t0": 5918.66,
+       "t1": 5919.38
+      },
+      {
+       "w": "الدُّنْـ",
+       "t0": 5919.52,
+       "t1": 5920.08
+      },
+      {
+       "w": "ـيَا",
+       "t0": 5920.1,
+       "t1": 5920.26
+      },
+      {
+       "w": "بِبَذْلٍ",
+       "t0": 5923.52,
+       "t1": 5924.18
+      },
+      {
+       "w": "يَمُدُّهُ",
+       "t0": 5924.58,
+       "t1": 5925.5
+      },
+      {
+       "w": "إِثْرَاءُ",
+       "t0": 5926.16,
+       "t1": 5926.74
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 380,
@@ -23005,6 +24504,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5959.58,
@@ -23067,6 +24567,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 5975.64,
@@ -23126,28 +24627,316 @@
    "v": 382,
    "id": "hamzia_b380",
    "text": "وَبِأُمِّ السِّبْطَيْنِ زَوْجِ عَلِيٍّ\nوَبَنِيهَا وَمَنْ حَوَتْهُ الْعَبَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6027.28,
+     "t1": 6041.62,
+     "score": -0.402,
+     "words": [
+      {
+       "w": "وَبِأُمِّ",
+       "t0": 6027.28,
+       "t1": 6028.48
+      },
+      {
+       "w": "السِّبْطَيْنِ",
+       "t0": 6028.5,
+       "t1": 6029.52
+      },
+      {
+       "w": "زَوْجِ",
+       "t0": 6029.98,
+       "t1": 6030.9
+      },
+      {
+       "w": "عَلِيٍّ",
+       "t0": 6031.06,
+       "t1": 6032.32
+      },
+      {
+       "w": "وَبَنِيهَا",
+       "t0": 6032.92,
+       "t1": 6034.5
+      },
+      {
+       "w": "وَمَنْ",
+       "t0": 6034.6,
+       "t1": 6035.26
+      },
+      {
+       "w": "حَوَتْهُ",
+       "t0": 6035.36,
+       "t1": 6037.94
+      },
+      {
+       "w": "الْعَبَاءُ",
+       "t0": 6039.12,
+       "t1": 6041.62
+      }
+     ]
+    },
+    {
+     "t0": 6081.68,
+     "t1": 6093.92,
+     "score": -0.567,
+     "words": [
+      {
+       "w": "وَبِأُمِّ",
+       "t0": 6081.68,
+       "t1": 6083.32
+      },
+      {
+       "w": "السِّبْطَيْنِ",
+       "t0": 6083.4,
+       "t1": 6084.4
+      },
+      {
+       "w": "زَوْجِ",
+       "t0": 6084.56,
+       "t1": 6085.16
+      },
+      {
+       "w": "عَلِيٍّ",
+       "t0": 6085.6,
+       "t1": 6086.22
+      },
+      {
+       "w": "وَبَنِيهَا",
+       "t0": 6086.8,
+       "t1": 6089.26
+      },
+      {
+       "w": "وَمَنْ",
+       "t0": 6089.82,
+       "t1": 6091.98
+      },
+      {
+       "w": "حَوَتْهُ",
+       "t0": 6092.16,
+       "t1": 6092.64
+      },
+      {
+       "w": "الْعَبَاءُ",
+       "t0": 6092.7,
+       "t1": 6093.92
+      }
+     ]
+    },
+    {
+     "t0": 6162.02,
+     "t1": 6178.2,
+     "score": -0.442,
+     "words": [
+      {
+       "w": "وَبِأُمِّ",
+       "t0": 6162.02,
+       "t1": 6162.76
+      },
+      {
+       "w": "السِّبْطَيْنِ",
+       "t0": 6162.8,
+       "t1": 6165.42
+      },
+      {
+       "w": "زَوْجِ",
+       "t0": 6165.56,
+       "t1": 6166.18
+      },
+      {
+       "w": "عَلِيٍّ",
+       "t0": 6166.42,
+       "t1": 6167.84
+      },
+      {
+       "w": "وَبَنِيهَا",
+       "t0": 6168.26,
+       "t1": 6172.16
+      },
+      {
+       "w": "وَمَنْ",
+       "t0": 6172.92,
+       "t1": 6174.72
+      },
+      {
+       "w": "حَوَتْهُ",
+       "t0": 6174.86,
+       "t1": 6176.1
+      },
+      {
+       "w": "الْعَبَاءُ",
+       "t0": 6176.18,
+       "t1": 6178.2
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 383,
    "id": "hamzia_b381",
    "text": "وَبِأَزْوَاجِكَ اللَّوَاتِي تَشَرَّفْـ\nـنَ بِأَنْ صَانَهُنَّ مِنْكَ بِنَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6254.12,
+     "t1": 6267.62,
+     "score": -0.601,
+     "words": [
+      {
+       "w": "وَبِأَزْوَاجِكَ",
+       "t0": 6254.12,
+       "t1": 6256.08
+      },
+      {
+       "w": "اللَّوَاتِي",
+       "t0": 6256.16,
+       "t1": 6257.1
+      },
+      {
+       "w": "تَشَرَّفْـ",
+       "t0": 6257.78,
+       "t1": 6258.86
+      },
+      {
+       "w": "ـنَ",
+       "t0": 6258.9,
+       "t1": 6259.08
+      },
+      {
+       "w": "بِأَنْ",
+       "t0": 6261.38,
+       "t1": 6261.78
+      },
+      {
+       "w": "صَانَهُنَّ",
+       "t0": 6262.56,
+       "t1": 6264.2
+      },
+      {
+       "w": "مِنْكَ",
+       "t0": 6264.22,
+       "t1": 6264.48
+      },
+      {
+       "w": "بِنَاءُ",
+       "t0": 6265.74,
+       "t1": 6267.62
+      }
+     ]
+    },
+    {
+     "t0": 6281.22,
+     "t1": 6297.94,
+     "score": -0.468,
+     "words": [
+      {
+       "w": "وَبِأَزْوَاجِكَ",
+       "t0": 6281.22,
+       "t1": 6284.38
+      },
+      {
+       "w": "اللَّوَاتِي",
+       "t0": 6284.46,
+       "t1": 6285.38
+      },
+      {
+       "w": "تَشَرَّفْـ",
+       "t0": 6286.14,
+       "t1": 6287.96
+      },
+      {
+       "w": "ـنَ",
+       "t0": 6288.0,
+       "t1": 6288.06
+      },
+      {
+       "w": "بِأَنْ",
+       "t0": 6288.92,
+       "t1": 6291.54
+      },
+      {
+       "w": "صَانَهُنَّ",
+       "t0": 6291.7,
+       "t1": 6294.72
+      },
+      {
+       "w": "مِنْكَ",
+       "t0": 6295.9,
+       "t1": 6296.06
+      },
+      {
+       "w": "بِنَاءُ",
+       "t0": 6296.22,
+       "t1": 6297.94
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 384,
    "id": "hamzia_b382",
    "text": "الأَمَانَ الأَمَانَ إِنَّ فُؤَادِي\nمِنْ ذُنُوبٍ أَتَيْتُهُنَّ هَوَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6299.04,
+     "t1": 6308.18,
+     "score": -0.775,
+     "words": [
+      {
+       "w": "الأَمَانَ",
+       "t0": 6299.04,
+       "t1": 6299.44
+      },
+      {
+       "w": "الأَمَانَ",
+       "t0": 6299.56,
+       "t1": 6300.9
+      },
+      {
+       "w": "إِنَّ",
+       "t0": 6300.96,
+       "t1": 6301.2
+      },
+      {
+       "w": "فُؤَادِي",
+       "t0": 6301.74,
+       "t1": 6302.16
+      },
+      {
+       "w": "مِنْ",
+       "t0": 6302.18,
+       "t1": 6302.38
+      },
+      {
+       "w": "ذُنُوبٍ",
+       "t0": 6302.84,
+       "t1": 6303.88
+      },
+      {
+       "w": "أَتَيْتُهُنَّ",
+       "t0": 6303.9,
+       "t1": 6307.86
+      },
+      {
+       "w": "هَوَاءُ",
+       "t0": 6307.9,
+       "t1": 6308.18
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 385,
@@ -23156,6 +24945,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -23165,16 +24955,71 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
    "v": 387,
    "id": "hamzia_b385",
    "text": "قَدْ رَجَوْنَاكَ لِلأُمُورِ التِي أَبْـ\nـرَدُهَا فِي فُؤادِنَا رَمْضَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6307.7,
+     "t1": 6316.94,
+     "score": -0.698,
+     "words": [
+      {
+       "w": "قَدْ",
+       "t0": 6307.7,
+       "t1": 6307.86
+      },
+      {
+       "w": "رَجَوْنَاكَ",
+       "t0": 6307.96,
+       "t1": 6308.84
+      },
+      {
+       "w": "لِلأُمُورِ",
+       "t0": 6308.96,
+       "t1": 6310.32
+      },
+      {
+       "w": "التِي",
+       "t0": 6310.38,
+       "t1": 6310.58
+      },
+      {
+       "w": "أَبْـ",
+       "t0": 6310.64,
+       "t1": 6311.14
+      },
+      {
+       "w": "ـرَدُهَا",
+       "t0": 6311.46,
+       "t1": 6312.44
+      },
+      {
+       "w": "فِي",
+       "t0": 6314.12,
+       "t1": 6314.28
+      },
+      {
+       "w": "فُؤادِنَا",
+       "t0": 6315.06,
+       "t1": 6316.12
+      },
+      {
+       "w": "رَمْضَاءُ",
+       "t0": 6316.46,
+       "t1": 6316.94
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 388,
@@ -23183,6 +25028,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -23192,16 +25038,81 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
    "v": 390,
    "id": "hamzia_b388",
    "text": "فَأَغِثْنَا يَا مَنْ هُوَ الْغَوْثُ وَالْغَــيْـ\nـثُ إِذَا أَجْهَدَ الْوَرَى اللَّأْوَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6316.46,
+     "t1": 6325.98,
+     "score": -1.026,
+     "words": [
+      {
+       "w": "فَأَغِثْنَا",
+       "t0": 6316.46,
+       "t1": 6317.46
+      },
+      {
+       "w": "يَا",
+       "t0": 6317.5,
+       "t1": 6317.56
+      },
+      {
+       "w": "مَنْ",
+       "t0": 6317.68,
+       "t1": 6318.18
+      },
+      {
+       "w": "هُوَ",
+       "t0": 6318.64,
+       "t1": 6318.76
+      },
+      {
+       "w": "الْغَوْثُ",
+       "t0": 6318.78,
+       "t1": 6321.16
+      },
+      {
+       "w": "وَالْغَــيْـ",
+       "t0": 6321.18,
+       "t1": 6321.94
+      },
+      {
+       "w": "ـثُ",
+       "t0": 6322.02,
+       "t1": 6322.42
+      },
+      {
+       "w": "إِذَا",
+       "t0": 6323.66,
+       "t1": 6323.88
+      },
+      {
+       "w": "أَجْهَدَ",
+       "t0": 6323.9,
+       "t1": 6324.2
+      },
+      {
+       "w": "الْوَرَى",
+       "t0": 6324.22,
+       "t1": 6325.18
+      },
+      {
+       "w": "اللَّأْوَاءُ",
+       "t0": 6325.44,
+       "t1": 6325.98
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 391,
@@ -23210,6 +25121,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -23219,6 +25131,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6328.2,
@@ -23281,6 +25194,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6346.36,
@@ -23353,6 +25267,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6364.74,
@@ -23420,6 +25335,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6384.76,
@@ -23482,6 +25398,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6402.22,
@@ -23534,6 +25451,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6420.86,
@@ -23586,6 +25504,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6441.58,
@@ -23648,6 +25567,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6460.08,
@@ -23705,6 +25625,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6477.96,
@@ -23769,10 +25690,106 @@
    "v": 401,
    "id": "hamzia_b399",
    "text": "أَوْثَقَتْهُ مِنَ الذُّنُوبِ دُيُونٌ\nشَدَّدَتْ فِي اقْتِضَائِهَا الْغُرَمَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6498.62,
+     "t1": 6517.66,
+     "score": -0.328,
+     "words": [
+      {
+       "w": "أَوْثَقَتْهُ",
+       "t0": 6498.62,
+       "t1": 6501.34
+      },
+      {
+       "w": "مِنَ",
+       "t0": 6501.92,
+       "t1": 6502.68
+      },
+      {
+       "w": "الذُّنُوبِ",
+       "t0": 6503.1,
+       "t1": 6505.36
+      },
+      {
+       "w": "دُيُونٌ",
+       "t0": 6506.3,
+       "t1": 6507.98
+      },
+      {
+       "w": "شَدَّدَتْ",
+       "t0": 6509.26,
+       "t1": 6511.22
+      },
+      {
+       "w": "فِي",
+       "t0": 6511.92,
+       "t1": 6512.14
+      },
+      {
+       "w": "اقْتِضَائِهَا",
+       "t0": 6512.42,
+       "t1": 6514.76
+      },
+      {
+       "w": "الْغُرَمَاءُ",
+       "t0": 6515.1,
+       "t1": 6517.66
+      }
+     ]
+    },
+    {
+     "t0": 6523.9,
+     "t1": 6536.72,
+     "score": -0.622,
+     "words": [
+      {
+       "w": "أَوْثَقَتْهُ",
+       "t0": 6523.9,
+       "t1": 6526.68
+      },
+      {
+       "w": "مِنَ",
+       "t0": 6527.1,
+       "t1": 6527.22
+      },
+      {
+       "w": "الذُّنُوبِ",
+       "t0": 6527.28,
+       "t1": 6527.94
+      },
+      {
+       "w": "دُيُونٌ",
+       "t0": 6529.06,
+       "t1": 6530.3
+      },
+      {
+       "w": "شَدَّدَتْ",
+       "t0": 6530.32,
+       "t1": 6531.22
+      },
+      {
+       "w": "فِي",
+       "t0": 6531.8,
+       "t1": 6531.92
+      },
+      {
+       "w": "اقْتِضَائِهَا",
+       "t0": 6532.96,
+       "t1": 6534.74
+      },
+      {
+       "w": "الْغُرَمَاءُ",
+       "t0": 6534.86,
+       "t1": 6536.72
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 402,
@@ -23781,6 +25798,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -23790,6 +25808,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6540.88,
@@ -23854,10 +25873,54 @@
    "v": 404,
    "id": "hamzia_b402",
    "text": "أَوْ تُرَى سَيِّئَاتُهُ حَسَنَاتٍ\nفَيُقَالُ اسْتَحَالَتِ الصَّهْبَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6563.44,
+     "t1": 6575.42,
+     "score": -0.5,
+     "words": [
+      {
+       "w": "أَوْ",
+       "t0": 6563.44,
+       "t1": 6564.12
+      },
+      {
+       "w": "تُرَى",
+       "t0": 6564.22,
+       "t1": 6564.52
+      },
+      {
+       "w": "سَيِّئَاتُهُ",
+       "t0": 6564.7,
+       "t1": 6567.48
+      },
+      {
+       "w": "حَسَنَاتٍ",
+       "t0": 6568.28,
+       "t1": 6568.88
+      },
+      {
+       "w": "فَيُقَالُ",
+       "t0": 6569.32,
+       "t1": 6571.0
+      },
+      {
+       "w": "اسْتَحَالَتِ",
+       "t0": 6571.06,
+       "t1": 6573.44
+      },
+      {
+       "w": "الصَّهْبَاءُ",
+       "t0": 6573.48,
+       "t1": 6575.42
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 405,
@@ -23866,6 +25929,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6583.22,
@@ -23933,6 +25997,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6604.54,
@@ -24005,6 +26070,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6626.82,
@@ -24077,6 +26143,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6646.08,
@@ -24144,6 +26211,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6655.78,
@@ -24206,6 +26274,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6665.02,
@@ -24273,6 +26342,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6675.12,
@@ -24330,6 +26400,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6684.72,
@@ -24387,6 +26458,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6694.48,
@@ -24444,6 +26516,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6704.1,
@@ -24511,6 +26584,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6713.84,
@@ -24583,6 +26657,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6723.32,
@@ -24640,6 +26715,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6732.76,
@@ -24702,6 +26778,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6742.18,
@@ -24759,6 +26836,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6751.66,
@@ -24831,6 +26909,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6761.14,
@@ -24893,6 +26972,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6770.5,
@@ -24965,6 +27045,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6779.84,
@@ -25024,10 +27105,64 @@
    "v": 423,
    "id": "hamzia_b421",
    "text": "وَأْتِ بِالْمُسْتَطَاعِ مِنْ عَمَلِ الْبِرِّ\nفَقَدْ يُسْقِطُ الثِمَارَ الإِتَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 6789.26,
+     "t1": 6798.2,
+     "score": -0.496,
+     "words": [
+      {
+       "w": "وَأْتِ",
+       "t0": 6789.26,
+       "t1": 6789.62
+      },
+      {
+       "w": "بِالْمُسْتَطَاعِ",
+       "t0": 6789.66,
+       "t1": 6791.66
+      },
+      {
+       "w": "مِنْ",
+       "t0": 6791.84,
+       "t1": 6792.26
+      },
+      {
+       "w": "عَمَلِ",
+       "t0": 6792.4,
+       "t1": 6793.54
+      },
+      {
+       "w": "الْبِرِّ",
+       "t0": 6793.8,
+       "t1": 6794.04
+      },
+      {
+       "w": "فَقَدْ",
+       "t0": 6794.18,
+       "t1": 6794.64
+      },
+      {
+       "w": "يُسْقِطُ",
+       "t0": 6794.76,
+       "t1": 6795.38
+      },
+      {
+       "w": "الثِمَارَ",
+       "t0": 6795.48,
+       "t1": 6797.14
+      },
+      {
+       "w": "الإِتَاءُ",
+       "t0": 6797.24,
+       "t1": 6798.2
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 424,
@@ -25036,6 +27171,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6798.88,
@@ -25098,6 +27234,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6811.3,
@@ -25160,6 +27297,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6823.92,
@@ -25232,6 +27370,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6836.56,
@@ -25294,6 +27433,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6849.38,
@@ -25361,6 +27501,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6862.22,
@@ -25438,6 +27579,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6874.94,
@@ -25500,6 +27642,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6887.7,
@@ -25567,6 +27710,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6900.66,
@@ -25634,6 +27778,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6913.38,
@@ -25686,6 +27831,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6926.26,
@@ -25743,6 +27889,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6939.06,
@@ -25810,6 +27957,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6951.86,
@@ -25872,6 +28020,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6964.62,
@@ -25929,6 +28078,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6977.62,
@@ -25991,6 +28141,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 6990.2,
@@ -26058,6 +28209,7 @@
    "sung": true,
    "review": false,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": [
     {
      "t0": 7001.48,
@@ -26120,6 +28272,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26129,6 +28282,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26138,6 +28292,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26147,6 +28302,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26156,6 +28312,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26165,6 +28322,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26174,6 +28332,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26183,6 +28342,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26192,6 +28352,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26201,6 +28362,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26210,6 +28372,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26219,6 +28382,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26228,6 +28392,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26237,6 +28402,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26246,6 +28412,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26255,6 +28422,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26264,6 +28432,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26273,6 +28442,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26282,6 +28452,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
@@ -26291,16 +28462,76 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   },
   {
    "v": 461,
    "id": "hamzia_closing_b001",
    "text": "صَلِّ يَا رَبَّنَا وَسَلِّمْ عَلَى مَنْ\nهُوَ لِلْخَلْقِ رَحْمَةٌ وَشِفَاءُ",
-   "sung": false,
-   "review": true,
+   "sung": true,
+   "review": false,
    "optional_sung": null,
-   "passes": []
+   "found_in_gap": true,
+   "passes": [
+    {
+     "t0": 7011.8,
+     "t1": 7019.04,
+     "score": -1.028,
+     "words": [
+      {
+       "w": "صَلِّ",
+       "t0": 7011.8,
+       "t1": 7012.34
+      },
+      {
+       "w": "يَا",
+       "t0": 7012.72,
+       "t1": 7012.88
+      },
+      {
+       "w": "رَبَّنَا",
+       "t0": 7012.92,
+       "t1": 7013.56
+      },
+      {
+       "w": "وَسَلِّمْ",
+       "t0": 7013.74,
+       "t1": 7014.98
+      },
+      {
+       "w": "عَلَى",
+       "t0": 7015.1,
+       "t1": 7015.26
+      },
+      {
+       "w": "مَنْ",
+       "t0": 7015.4,
+       "t1": 7015.62
+      },
+      {
+       "w": "هُوَ",
+       "t0": 7015.8,
+       "t1": 7016.26
+      },
+      {
+       "w": "لِلْخَلْقِ",
+       "t0": 7016.34,
+       "t1": 7016.94
+      },
+      {
+       "w": "رَحْمَةٌ",
+       "t0": 7017.22,
+       "t1": 7018.38
+      },
+      {
+       "w": "وَشِفَاءُ",
+       "t0": 7018.46,
+       "t1": 7019.04
+      }
+     ]
+    }
+   ]
   },
   {
    "v": 462,
@@ -26309,6 +28540,7 @@
    "sung": false,
    "review": true,
    "optional_sung": null,
+   "found_in_gap": false,
    "passes": []
   }
  ]

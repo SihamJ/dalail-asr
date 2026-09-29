@@ -2,7 +2,7 @@
 """Étape 4 — les livrables, au même format que l'ancien pipeline, plus le
 niveau du mot.
 
-    python new/export.py NOM TEXTE.json DECISION.json
+    python new/export.py NOM TEXTE.json DECISION.json [--title TITRE] [--audio-url URL]
 
 écrit, à la racine du dépôt :
   NOM_labels.txt       une étiquette Audacity par ligne (même format
@@ -12,10 +12,23 @@ niveau du mot.
                        pour le 2e passage d'une ligne répétée)
   NOM_words.json       tout, en secondes, pour une application
 et reconstruit review_data.js (la page de vérification) à partir des
-recordings déjà exportés."""
-import json, pathlib, sys
+enregistrements déjà exportés (tous les *_words.json de la racine).
+
+--title : le nom affiché dans les pages de vérification (défaut : NOM).
+--audio-url : d'où les pages lisent l'audio — une URL ; à défaut, le
+fichier (--audio-file, posé par run.sh) lu à la racine du dépôt."""
+import argparse, json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-name, textf, decf = sys.argv[1:4]
+ap = argparse.ArgumentParser()
+ap.add_argument("name"); ap.add_argument("text"); ap.add_argument("decision")
+ap.add_argument("--title"); ap.add_argument("--audio-url"); ap.add_argument("--audio-file")
+args = ap.parse_args()
+name, textf, decf = args.name, args.text, args.decision
+R2 = "https://pub-399f14501bad46a28b40e12c0215d805.r2.dev/"
+KNOWN = {"hamzia": ("الهمزية", R2 + "hamzia.mp3"),
+         "dalail": ("دلائل الخيرات (المراكشية)", R2 + "dalail-marrakchiya.mp3")}
+title = args.title or KNOWN.get(name, (name, None))[0]
+audio_url = args.audio_url or KNOWN.get(name, (None, None))[1] or args.audio_file or f"{name}.mp3"
 lines = json.load(open(textf)); dec = json.load(open(decf))
 assert len(lines) == len(dec)
 WEAK = -1.2    # en dessous, un emplacement est gardé mais marqué REVIEW
@@ -54,33 +67,33 @@ out = []
 for vi, (ln, r, d) in enumerate(zip(lines, rows, dec)):
     out.append({"v": vi + 1, "id": ln.get("id"), "text": ln["text"], "sung": r["sung"],
                 "review": r["review"], "optional_sung": d.get("optional_sung"),
+                "found_in_gap": bool(d.get("filled")),
                 "passes": [{"t0": round(p["t0"] / 1000, 2), "t1": round(p["t1"] / 1000, 2),
                             "score": p["adv"],
                             "words": [{"w": w, "t0": round(t0 / 1000, 2), "t1": round(t1 / 1000, 2)}
                                       for w, t0, t1 in p["words"]]} for p in r["passes"]]})
-json.dump({"recording": name, "model": "rabah2026/wav2vec2-large-xlsr-53-arabic-quran-v_final",
+json.dump({"recording": name, "title": title, "audio": audio_url,
+           "text_file": pathlib.Path(textf).name,
+           "model": "rabah2026/wav2vec2-large-xlsr-53-arabic-quran-v_final",
            "units": "secondes", "lines": out}, open(ROOT / f"{name}_words.json", "w"),
           ensure_ascii=False, indent=1)
 
-# review_data.js : une ligne par vers/segment, comme l'ancienne page l'attend
-META = {"hamzia": ("الهمزية — فحص المحاذاة", "hamzia.mp3"),
-        "dalail": ("دلائل الخيرات (المراكشية) — فحص المحاذاة", "dalail-marrakchiya.mp3")}
-R2 = "https://pub-399f14501bad46a28b40e12c0215d805.r2.dev/"
+# review_data.js : une ligne par vers/segment, comme la page l'attend —
+# pour chaque enregistrement exporté
 data = {}
-for key, (title, mp3) in META.items():
-    p = ROOT / f"{key}_words.json"
-    if not p.exists(): continue
-    ws = json.load(open(p))["lines"]
-    tl = {x["v"]: x for x in ws}
+for p in sorted(ROOT.glob("*_words.json")):
+    W = json.load(open(p)); key = W["recording"]
     lab = [l.split("\t") for l in open(ROOT / f"{key}_labels.txt", encoding="utf-8")]
-    first = {}
+    span = {}
     for t0, t1, rest in lab:
-        v = int(rest.replace("REVIEW ", "")[1:4])
-        first.setdefault(v, [float(t0), float(t1)]); first[v][1] = float(t1)
-    data[key] = {"title": title, "audio": R2 + mp3,
-                 "rows": [{"t0": first[x["v"]][0], "t1": first[x["v"]][1], "review": x["review"],
-                           "label": f"v{x['v']:03d} — " + x["text"].replace("\n", " ⁘ ")} for x in ws]}
+        v = int(rest.replace("REVIEW ", "")[1:4]) if rest.replace("REVIEW ", "")[1:4].isdigit() else None
+        if v is None: continue
+        span.setdefault(v, [float(t0), float(t1)]); span[v][1] = float(t1)
+    data[key] = {"title": W.get("title", key) + " — فحص المحاذاة", "audio": W.get("audio", f"{key}.mp3"),
+                 "rows": [{"t0": span[x["v"]][0], "t1": span[x["v"]][1], "review": x["review"],
+                           "label": f"v{x['v']:03d} — " + x["text"].replace("\n", " ⁘ ")} for x in W["lines"]]}
 (ROOT / "review_data.js").write_text("const DATA = " + json.dumps(data, ensure_ascii=False) + ";\n")
 n_sung = sum(r["sung"] for r in rows); n_rep = sum(len(r["passes"]) > 1 for r in rows)
-print(f"{name}: {n_sung}/{len(rows)} lignes chantées, {n_rep} répétées, "
+n_gap = sum(bool(d.get("filled")) for d in dec)
+print(f"{name}: {n_sung}/{len(rows)} lignes chantées (dont {n_gap} retrouvées dans leur trou), {n_rep} répétées, "
       f"{sum(r['review'] for r in rows)} REVIEW → {name}_labels.txt, {name}_word_labels.txt, {name}_words.json")

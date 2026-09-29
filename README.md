@@ -33,8 +33,10 @@ word_review.html (+ word_review_data.js, word_review.sh)
 review.html (+ review.sh)    vérifier et corriger les LIGNES
 
 new/                     LE PIPELINE ACTUEL (alignement forcé CTC)
-  run.sh                 tout, pour un enregistrement
-  emit.py → find_lines.py → decide.py → export.py
+  run.sh                 tout, pour un enregistrement (n'importe lequel)
+  emit.py → find_lines.py → decide.py → fill_gaps.py → export.py
+  ctc.py                 le cœur commun aux deux passes de recherche
+  text_from_txt.py       préparer le texte d'un nouvel enregistrement
   word_review_data.py    les données de word_review.html
   requirements.txt
 old/                     L'ANCIEN PIPELINE (Whisper + appariement)
@@ -66,7 +68,8 @@ d'étiquettes, par-dessus l'audio.
 ```
 
 `passes` a un élément par fois où la ligne est chantée (vide si elle ne
-l'est pas). `optional_sung` dit si les mots entre parenthèses — `(سَيِّدِنَا)`
+l'est pas). `found_in_gap` vaut `true` pour une ligne retrouvée par la
+seconde passe (voir l'étape 3 bis) : ce sont les premières à écouter. `optional_sung` dit si les mots entre parenthèses — `(سَيِّدِنَا)`
 — ont été retenus comme chantés (voir « Limites »). Pour surligner, prenez
 `t0` de chaque mot : le mot reste allumé jusqu'au `t0` du suivant.
 
@@ -74,11 +77,18 @@ l'est pas). `optional_sung` dit si les mots entre parenthèses — `(سَيِّ�
 
 | | Dalail | Hamziyya |
 |---|---|---|
-| lignes placées | 200 / 280 | 404 / 462 |
-| lignes répétées | 0 | 8 |
-| lignes REVIEW | 80 (non chantées) | 58 |
-| mots avec un temps — ancien pipeline | 57 % | 46 % |
+| lignes placées | 244 / 280 | 431 / 462 |
+| … dont retrouvées dans leur trou (étape 3 bis) | 44 | 27 |
+| lignes répétées | 2 | 13 |
+| lignes REVIEW | 39 | 31 |
+| mots avec un temps — ancien pipeline | 55 % | 46 % |
 | mots avec un temps — nouveau | 100 % des lignes placées | 100 % des lignes placées |
+
+Les lignes non placées sont, pour l'essentiel, **vraiment omises** dans
+ces enregistrements : leurs deux voisines placées se touchent, sans place
+entre elles pour la ligne (une trentaine dans le Dalail, 28 dans la
+Hamziyya ; le dernier vers de la Hamziyya tombe après la fin de
+l'enregistrement).
 
 ## Pourquoi un nouveau pipeline
 
@@ -115,9 +125,19 @@ mêmes frontières à 100 ms près pour ~90 % des mots.
    fois ; une ligne sans emplacement convenable est « non chantée ». Les
    autres candidats d'une ligne situés juste après elle sont ses
    **répétitions**.
+3 bis. **`new/fill_gaps.py`** — la seconde passe. Ces textes se
+   répètent (formules du Dalail, rimes et tournures de la Hamziyya) : le
+   meilleur candidat d'une ligne était parfois la même formule ailleurs,
+   hors de l'ordre du livre, donc refusé à juste titre — et la ligne
+   perdue alors qu'elle est chantée. Chaque ligne restée « non chantée »
+   est donc recherchée une seconde fois, mais seulement dans **son** trou,
+   entre la ligne placée avant elle et celle placée après, où les
+   imitations ailleurs ne peuvent plus concourir. Un trou trop court pour
+   la ligne (moins de 0,3 s par mot), ou qui ne contient rien qui lui
+   ressemble, la laisse non chantée.
 4. **`new/export.py`** — les livrables ci-dessus, et `review_data.js`.
 
-`new/run.sh` enchaîne les quatre. La position a priori vient des
+`new/run.sh` enchaîne le tout. La position a priori vient des
 étiquettes de l'ancien pipeline (`old/*_labels.txt`) ; sans elles, les
 lignes sont réparties proportionnellement au nombre de mots et la fenêtre
 de recherche est élargie (voir plus bas).
@@ -166,13 +186,48 @@ s'il est là.
 l'ordre d'une heure pour 2 h d'audio, l'étape 2 bien davantage. À réserver
 à un essai sur un extrait.
 
-**Un nouvel enregistrement** : il faut son texte en JSON (liste de
-`{"id", "text"}` dans l'ordre), puis
-`new/run.sh NOM audio.mp3 texte.json` — sans fichier a priori, la
-recherche se fait sur ±40 min autour d'une position proportionnelle. Si
-beaucoup de lignes finissent « non chantées », relancez l'étape 2 avec une
-fenêtre plus large (`--window-min 60`) ou fournissez des étiquettes a
-priori grossières (même faites à la main pour quelques lignes-repères).
+### Un nouvel enregistrement
+
+La même commande sert pour n'importe quel enregistrement : seul change le
+**nom** que vous lui donnez (il nomme les fichiers produits).
+
+1. **Le texte.** Écrivez-le dans un fichier texte brut, une ligne (ou un
+   vers) par rangée, dans l'ordre où il est chanté. Pour un vers en deux
+   hémistiches, séparez les deux moitiés par « * ». Mettez entre
+   parenthèses les mots que le munshid peut omettre : `(سيدنا)`. Puis :
+   ```bash
+   python new/text_from_txt.py burda burda.txt burda_text.json
+   ```
+   (Vous pouvez aussi écrire directement le JSON : une liste de
+   `{"id", "text"}` — c'est le format de `hamzia_verses.json`.)
+2. **L'audio.** Posez le fichier (mp3, m4a, wav… tout ce que lit ffmpeg)
+   à la racine du dépôt, par exemple `burda.mp3`.
+3. **Lancer :**
+   ```bash
+   new/run.sh burda burda.mp3 burda_text.json
+   # avec un titre pour les pages de vérification :
+   TITLE="البردة" new/run.sh burda burda.mp3 burda_text.json
+   ```
+   Sans fichier a priori, chaque ligne est cherchée sur ±40 min autour
+   d'une position proportionnelle à son rang dans le texte. Si vous
+   disposez d'étiquettes Audacity grossières (une par ligne, même placées
+   à la main à quelques secondes près), passez-les en 4ᵉ argument : la
+   recherche est alors plus sûre et plus rapide.
+4. **Les sorties** portent le nom choisi : `burda_labels.txt`,
+   `burda_word_labels.txt`, `burda_words.json`. `review_data.js` inclut
+   désormais aussi ce nouvel enregistrement. Pour la page mot par mot :
+   ```bash
+   python new/word_review_data.py && ./word_review.sh
+   ```
+   Les pages lisent l'audio à la racine du dépôt (`burda.mp3`) ; pour un
+   audio en ligne, donnez son URL : `AUDIO_URL=https://… new/run.sh …`.
+   Il n'y a pas de timing « ancien » pour un nouvel enregistrement : le
+   bouton القديم n'aura rien à montrer.
+
+Si beaucoup de lignes finissent « non chantées », c'est souvent que la
+position a priori est trop loin : relancez l'étape 2 avec une fenêtre plus
+large (`python new/find_lines.py … --window-min 60`), ou fournissez des
+étiquettes a priori.
 
 ## Réglages et limites
 
@@ -189,10 +244,13 @@ priori grossières (même faites à la main pour quelques lignes-repères).
   est la partie la moins sûre (deux modèles indépendants ne s'accordent
   qu'une fois sur deux). Si le surlignage trébuche autour de ces mots,
   c'est la cause probable.
-- **Répétitions** : les 8 de la Hamziyya ont des passages de durée et de
-  score semblables, séparés de 2–3 s — typiques. Deux méritent une oreille :
-  v044 (15 s entre les passages) et v283 (un 3ᵉ passage 1 min 30 plus
-  tard, peut-être une reprise plutôt qu'une répétition).
+- **Répétitions** : la plupart ont des passages de durée et de score
+  semblables, séparés de 2–3 s — typiques. Méritent une oreille celles dont
+  les passages sont espacés de plus de 10 s ou qui en ont trois (une
+  reprise plus loin plutôt qu'une répétition, ou un vers voisin qui lui
+  ressemble) : Hamziyya v044, v237, v283, v321, v382, v383 ; Dalail v269.
+- **Lignes retrouvées dans leur trou** (`found_in_gap`) : placées par la
+  seconde passe, dans un espace étroit ; ce sont les premières à écouter.
 - Le Dalail reste plus difficile que la Hamziyya (ensemble, interludes,
   ~30 % du texte non chanté dans cet enregistrement) : ses scores sont plus
   bas, et les lignes REVIEW demandent une oreille.
