@@ -77,18 +77,22 @@ seconde passe (voir l'étape 3 bis) : ce sont les premières à écouter. `optio
 
 | | Dalail | Hamziyya |
 |---|---|---|
-| lignes placées | 244 / 280 | 431 / 462 |
-| … dont retrouvées dans leur trou (étape 3 bis) | 44 | 27 |
-| lignes répétées | 2 | 13 |
-| lignes REVIEW | 39 | 31 |
-| mots avec un temps — ancien pipeline | 55 % | 46 % |
+| lignes placées | 250 / 280 | 439 / 462 |
+| … dont retrouvées dans leur trou (étape 3 bis) | 50 | 35 |
+| lignes répétées | 1 | 13 |
+| lignes REVIEW | 33 | 23 |
+| mots avec un temps — ancien pipeline | 55 % | 45 % |
 | mots avec un temps — nouveau | 100 % des lignes placées | 100 % des lignes placées |
 
-Les lignes non placées sont, pour l'essentiel, **vraiment omises** dans
-ces enregistrements : leurs deux voisines placées se touchent, sans place
-entre elles pour la ligne (une trentaine dans le Dalail, 28 dans la
-Hamziyya ; le dernier vers de la Hamziyya tombe après la fin de
-l'enregistrement).
+Les lignes non placées sont **vraiment absentes** de ces enregistrements —
+vérifié à l'oreille sur des exemples :
+
+- **Dalail** (30) : surtout des lignes que le munshid ne chante pas par
+  nature — titres et notes de l'édition (« ثم تدعو بهذا الدعاء… »,
+  « نجز الثلث الأول… ») — et quelques lignes omises.
+- **Hamziyya** (23) : v441–v460, les vingt vers qui précèdent la prière
+  finale (le munshid passe de v440 directement à v461, vers 1:56:52) ;
+  v242–v243 ; et v462, qui tomberait après la fin de l'enregistrement.
 
 ## Pourquoi un nouveau pipeline
 
@@ -132,9 +136,14 @@ mêmes frontières à 100 ms près pour ~90 % des mots.
    perdue alors qu'elle est chantée. Chaque ligne restée « non chantée »
    est donc recherchée une seconde fois, mais seulement dans **son** trou,
    entre la ligne placée avant elle et celle placée après, où les
-   imitations ailleurs ne peuvent plus concourir. Un trou trop court pour
-   la ligne (moins de 0,3 s par mot), ou qui ne contient rien qui lui
-   ressemble, la laisse non chantée.
+   imitations ailleurs ne peuvent plus concourir. Les lignes manquantes
+   d'un même trou sont alignées **ensemble, dans l'ordre**, avec un joker
+   avant, entre et après elles (interludes, silence) : chacune ne peut
+   prendre que sa place dans la suite. (Les chercher une à une laissait la
+   première avaler l'audio des suivantes, qui lui ressemblent.) Une ligne
+   qui colle mal est retirée et le trou réaligné sans elle ; si le trou
+   est trop court pour toutes, on retire celle qui, seule, ressemble le
+   moins à ce qu'il contient.
 4. **`new/export.py`** — les livrables ci-dessus, et `review_data.js`.
 
 `new/run.sh` enchaîne le tout. La position a priori vient des
@@ -244,11 +253,11 @@ large (`python new/find_lines.py … --window-min 60`), ou fournissez des
   est la partie la moins sûre (deux modèles indépendants ne s'accordent
   qu'une fois sur deux). Si le surlignage trébuche autour de ces mots,
   c'est la cause probable.
-- **Répétitions** : la plupart ont des passages de durée et de score
-  semblables, séparés de 2–3 s — typiques. Méritent une oreille celles dont
-  les passages sont espacés de plus de 10 s ou qui en ont trois (une
-  reprise plus loin plutôt qu'une répétition, ou un vers voisin qui lui
-  ressemble) : Hamziyya v044, v237, v283, v321, v382, v383 ; Dalail v269.
+- **Répétitions** : une répétition n'est retenue que si elle suit sa
+  ligne de près (≤ 20 s) — les vraies sont séparées de 2 à 5 s ; au-delà,
+  c'est le plus souvent un vers voisin qui lui ressemble (même mètre, même
+  rime). Mérite une oreille : Hamziyya v044 (15 s entre les passages,
+  peut-être un interlude).
 - **Lignes retrouvées dans leur trou** (`found_in_gap`) : placées par la
   seconde passe, dans un espace étroit ; ce sont les premières à écouter.
 - Le Dalail reste plus difficile que la Hamziyya (ensemble, interludes,

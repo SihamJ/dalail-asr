@@ -81,3 +81,41 @@ class Emissions:
         adv, f0, f1, spans = f
         return {"adv": round(adv, 3), "t0": (c0 + f0) * 20, "t1": (c0 + f1) * 20,
                 "words": [[w, (c0 + spans[k][0]) * 20, (c0 + spans[k][1] + 1) * 20] for k, w in enumerate(words)]}
+
+    def align_run(self, em, texts):
+        """Several consecutive lines aligned together, in order, a joker
+        before, between and after them (interludes, silence). Returns, per
+        line, (score, first frame, end, spans) — or None if the stretch is
+        too short for them."""
+        toks, owner, words = [self.STAR], [None], []
+        for li, (text, keep) in enumerate(texts):
+            ws = []
+            for raw in text.split():
+                opt = raw.startswith("(") or raw.endswith(")")
+                disp = raw.strip("()")
+                if opt and not keep: continue
+                ls = self.letters(disp)
+                if not ls: continue
+                if toks[-1] != self.STAR: toks.append(self.sep); owner.append(None)
+                for ch in ls: toks.append(self.vocab[ch]); owner.append((li, len(ws)))
+                ws.append(disp)
+            words.append(ws)
+            toks.append(self.STAR); owner.append(None)
+        if len(toks) * 2 > em.shape[0]: return None
+        ali, sc = F.forced_align(em.unsqueeze(0), torch.tensor([toks], device=self.dev), blank=self.blank)
+        ali = ali[0].tolist()
+        spans = {}; ti = -1; prev = None
+        for f, lab in enumerate(ali):
+            if lab != self.blank and lab != prev: ti += 1
+            prev = lab
+            if lab == self.blank or ti < 0 or owner[ti] is None: continue
+            sp = spans.setdefault(owner[ti], [f, f]); sp[1] = f
+        out = []
+        for li, ws in enumerate(words):
+            mine = {wi: spans[(li, wi)] for wi in range(len(ws)) if (li, wi) in spans}
+            if len(mine) < len(ws) or not ws:
+                out.append(None); continue
+            f0 = min(v[0] for v in mine.values()); f1 = max(v[1] for v in mine.values()) + 1
+            adv = (sc[0][f0:f1].sum().item() - em[f0:f1, self.STAR].sum().item()) / max(1, f1 - f0)
+            out.append((adv, f0, f1, mine, ws))
+        return out

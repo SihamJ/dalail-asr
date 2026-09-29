@@ -2,8 +2,8 @@
 """Étape 3 — tout le texte décidé ensemble : un emplacement par ligne, dans
 l'ordre du livre, aucun tronçon d'audio revendiqué deux fois ; une ligne
 sans emplacement convenable est « non chantée ». Les autres candidats d'une
-ligne situés entre elle et la suivante sont ses répétitions (un vers chanté
-deux fois donne deux passages).
+ligne qui la suivent de près (≤ 20 s), avant la suivante, sont ses
+répétitions (un vers chanté deux fois donne deux passages).
 
     python new/decide.py CANDIDATS.json SORTIE.json"""
 import json, sys
@@ -11,6 +11,7 @@ R = json.load(open(sys.argv[1]))
 REWARD = 1.3   # un emplacement vaut d'être pris au-dessus d'un score de −1.3
 TOL = 800      # ms de chevauchement toléré avec la ligne précédente
 REPEAT = .35   # une répétition score presque aussi bien que le premier passage
+NEAR = 20000   # … et le suit de près : au plus 20 s après le passage précédent
 cands = [r["finds"] for r in R]; n = len(R)
 states = {-1: (0.0, None)}   # fin du dernier passage placé → (score, chemin)
 for i in range(n):
@@ -38,7 +39,8 @@ for i, c in enumerate(choice):
     passes = [main]
     for k, f in enumerate(cands[i]):
         if k == c: continue
-        if f["t0"] >= main["t1"] - TOL and f["t1"] <= nxt_t0 + TOL and f["adv"] >= main["adv"] - REPEAT \
+        if f["t0"] >= main["t1"] - TOL and f["t0"] <= passes[-1]["t1"] + NEAR and f["t1"] <= nxt_t0 + TOL \
+           and f["adv"] >= main["adv"] - REPEAT \
            and all(f["t0"] >= p["t1"] - TOL or f["t1"] <= p["t0"] + TOL for p in passes):
             passes.append(f)
     passes.sort(key=lambda f: f["t0"])

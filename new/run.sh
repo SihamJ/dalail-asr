@@ -17,5 +17,5 @@ else
   python new/find_lines.py "new/work/$NAME.pt" "$TEXT" "new/work/${NAME}_candidates.json" --window-min 40
 fi
 python new/decide.py "new/work/${NAME}_candidates.json" "new/work/${NAME}_decision.json"
-python new/fill_gaps.py "new/work/$NAME.pt" "$TEXT" "new/work/${NAME}_decision.json" "new/work/${NAME}_final.json"
+python new/fill_gaps.py "new/work/$NAME.pt" "$TEXT" "new/work/${NAME}_decision.json" "new/work/${NAME}_candidates.json" "new/work/${NAME}_final.json"
 python new/export.py "$NAME" "$TEXT" "new/work/${NAME}_final.json" --audio-file "$(basename "$AUDIO")" ${TITLE:+--title "$TITLE"} ${AUDIO_URL:+--audio-url "$AUDIO_URL"}
