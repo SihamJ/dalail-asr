@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audacity labels for the Hamziyya — v3: banded global alignment.
+"""Audacity labels for the Dalail al-Khayrat (ensemble) — v3: banded global alignment.
 
 v1 (global difflib): 3/462 — exact-only matching left common words as the
 only anchors, and LCS stitched them across half an hour.
@@ -17,7 +17,8 @@ import json
 import pathlib
 import re
 
-S = pathlib.Path(__file__).parent
+S = pathlib.Path(__file__).parent          # old/: transcripts in, labels out
+ROOT = S.parent                            # the reference texts
 MARKS = re.compile(r"[ً-ْٰۖ-ۭـ]")
 NONLETTER = re.compile(r"[^ء-ي ]")
 FOLD = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا",
@@ -30,7 +31,7 @@ def norm(w: str) -> str:
     return w.translate(FOLD).replace("ء", "").strip()
 
 
-verses = json.loads((S / "hamzia_verses.json").read_text())
+verses = json.loads((ROOT / "dalail_segments.json").read_text())
 book = []                          # (norm, verse_idx)
 for vi, v in enumerate(verses):
     for w in v["text"].split():
@@ -38,7 +39,7 @@ for vi, v in enumerate(verses):
         if n:
             book.append((n, vi))
 
-asr = json.loads((S / "hamzia.asr.json").read_text())
+asr = json.loads((S / "dalail-marrakchiya.asr.json").read_text())
 hyp = []                           # (norm, start, end)
 for seg in asr["segments"]:
     for w in seg["words"]:
@@ -141,7 +142,7 @@ for a, b in zip(rows, rows[1:]):   # monotonic
         mid = round((b["t0"] + a["t1"]) / 2, 2)
         a["t1"] = b["t0"] = mid
 
-lab = S / "hamzia_labels.txt"
+lab = S / "dalail_labels.txt"
 with lab.open("w") as f:
     for r in rows:
         flag = "REVIEW " if r["review"] else ""

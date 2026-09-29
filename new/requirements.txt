@@ -1,0 +1,5 @@
+# le nouveau pipeline (alignement forcé CTC) — plus ffmpeg sur le système
+torch>=2.1
+torchaudio>=2.1
+transformers>=4.40
+numpy

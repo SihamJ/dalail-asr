@@ -1,2 +1,4 @@
 # Audio Files
 *.mp3
+# nouveau pipeline : fichiers intermédiaires (probabilités, candidats)
+new/work/
