@@ -91,9 +91,8 @@ Toutes les lignes non placées ont été écoutées une à une :
 - **Dalail** (13) : les 10 titres et notes de l'édition, que le munshid
   ne chante pas (« أسماء سيدنا… », « ثم تدعو بهذا الدعاء… », « نجز الربع
   الأول… », etc.) — marqués `"chanted": false` dans `dalail_segments.json`,
-  voir plus bas ; et **v189–v191**, entendues à l'écoute mais introuvables
-  à leur place : entre v188 (1:31:24) et v192 (1:31:39), l'audio ne les
-  contient pas. Leur emplacement reste à situer.
+  voir plus bas ; et **v189–v191**, que ce munshid ne récite pas : il
+  enchaîne v188 (1:31:24) et v192 (1:31:39), vérifié à l'oreille.
 - **Hamziyya** (21) : l'enregistrement s'arrête net à 1:57:01, en plein
   v441 (« …فقامت تغار », placé et marqué `cut`) ; v442–v462 n'y sont donc
   pas.
@@ -256,6 +255,32 @@ La même commande sert pour n'importe quel enregistrement : seul change le
    audio en ligne, donnez son URL : `AUDIO_URL=https://… new/run.sh …`.
    Il n'y a pas de timing « ancien » pour un nouvel enregistrement : le
    bouton القديم n'aura rien à montrer.
+5. **Écouter les lignes manquantes.** `./review.sh`, puis choisissez
+   l'enregistrement — ou ouvrez directement
+   `http://localhost:8097/review.html#burda/missing` : seules les lignes
+   non placées s'affichent (en violet), et un clic fait entendre l'audio
+   entre leurs deux voisines. Trois cas :
+   - **on n'y entend rien de cette ligne** (titre, note, ligne sautée) :
+     rien à faire — ou, si c'est un titre ou une note, marquez-la « # »
+     dans le texte pour qu'elle ne soit plus jamais cherchée ;
+   - **elle y est chantée** : reculez les deux voisines d'une ligne ou
+     deux dans la page (voir « Corriger les positions ») et signalez-le —
+     c'est un cas à étudier ;
+   - **elle est chantée ailleurs** (le munshid change l'ordre) : le
+     pipeline suit l'ordre du texte ; déplacez la ligne dans le texte à
+     l'endroit où elle est chantée.
+6. **Relancer après avoir marqué des lignes « # ».** Inutile de tout
+   refaire (l'étape 1 est la plus longue) : si le texte a gardé le même
+   nombre de lignes, dans le même ordre, seules les étapes 3 bis et 4
+   tournent à nouveau, en quelques minutes :
+   ```bash
+   python new/text_from_txt.py burda burda.txt burda_text.json
+   python new/fill_gaps.py new/work/burda.pt burda_text.json \
+       new/work/burda_decision.json new/work/burda_candidates.json new/work/burda_final.json
+   python new/export.py burda burda_text.json new/work/burda_final.json --audio-file burda.mp3
+   ```
+   Si des lignes ont été ajoutées, retirées ou déplacées, relancez
+   `new/run.sh` en entier.
 
 Si beaucoup de lignes finissent « non chantées », c'est souvent que la
 position a priori est trop loin : relancez l'étape 2 avec une fenêtre plus
@@ -319,8 +344,15 @@ une ligne pour y amener l'audio ; la ligne en cours de lecture se
 surligne et suit. **Les lignes orange sont marquées REVIEW** — non
 trouvées dans l'audio (intervalle interpolé) ou placées avec une
 confiance faible — ce sont elles qui demandent une oreille. L'en-tête
-compte تلقائي et للمراجعة. `review_data.js` vient désormais du nouveau
-pipeline ; celui de l'ancien est dans `old/`.
+compte تلقائي et للمراجعة. **Les lignes violettes (« غير مُنشَد ») ne
+sont pas placées** : leur intervalle est le trou entre leurs voisines,
+avec sa durée (« فراغ 12s », ou « لا فراغ بين جارَيه » si les voisines se
+touchent), et un clic joue à partir de 3 s avant ce trou. Les filtres
+الكل / غير المُنشَد فقط / للمراجعة فقط réduisent la liste ; l'adresse
+`review.html#dalail/missing` ouvre directement un enregistrement filtré.
+Une ligne coupée par le bord de l'enregistrement porte « مقطوع بطرف
+التسجيل ». `review_data.js` vient désormais du nouveau pipeline ; celui
+de l'ancien est dans `old/`.
 
 #### Corriger les positions
 
