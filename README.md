@@ -79,22 +79,24 @@ seuls ses mots présents ont un temps. `optional_sung` dit si les mots entre par
 
 | | Dalail | Hamziyya |
 |---|---|---|
-| lignes placées | 250 / 280 | 439 / 462 |
-| … dont retrouvées dans leur trou (étape 3 bis) | 50 | 35 |
-| lignes répétées | 1 | 13 |
-| lignes REVIEW | 33 | 24 |
-| mots avec un temps — ancien pipeline | 55 % | 45 % |
+| lignes placées | 267 / 280 | 441 / 462 |
+| … dont retrouvées dans leur trou (étape 3 bis) | 67 | 37 |
+| lignes répétées | 2 | 15 |
+| lignes REVIEW | 19 | 22 |
+| mots avec un temps — ancien pipeline | 53 % | 45 % |
 | mots avec un temps — nouveau | 100 % des lignes placées | 100 % des lignes placées |
 
-Les lignes non placées sont **vraiment absentes** de ces enregistrements —
-vérifié à l'oreille sur des exemples :
+Toutes les lignes non placées ont été écoutées une à une :
 
-- **Dalail** (30) : surtout des lignes que le munshid ne chante pas par
-  nature — titres et notes de l'édition (« ثم تدعو بهذا الدعاء… »,
-  « نجز الثلث الأول… ») — et quelques lignes omises.
-- **Hamziyya** (23) : l'enregistrement s'arrête net à 1:57:01, en plein
+- **Dalail** (13) : les 10 titres et notes de l'édition, que le munshid
+  ne chante pas (« أسماء سيدنا… », « ثم تدعو بهذا الدعاء… », « نجز الربع
+  الأول… », etc.) — marqués `"chanted": false` dans `dalail_segments.json`,
+  voir plus bas ; et **v189–v191**, entendues à l'écoute mais introuvables
+  à leur place : entre v188 (1:31:24) et v192 (1:31:39), l'audio ne les
+  contient pas. Leur emplacement reste à situer.
+- **Hamziyya** (21) : l'enregistrement s'arrête net à 1:57:01, en plein
   v441 (« …فقامت تغار », placé et marqué `cut`) ; v442–v462 n'y sont donc
-  pas. S'y ajoutent v242–v243.
+  pas.
 
 ## Pourquoi un nouveau pipeline
 
@@ -135,20 +137,32 @@ mêmes frontières à 100 ms près pour ~90 % des mots.
    répètent (formules du Dalail, rimes et tournures de la Hamziyya) : le
    meilleur candidat d'une ligne était parfois la même formule ailleurs,
    hors de l'ordre du livre, donc refusé à juste titre — et la ligne
-   perdue alors qu'elle est chantée. Chaque ligne restée « non chantée »
-   est donc recherchée une seconde fois, mais seulement dans **son** trou,
-   entre la ligne placée avant elle et celle placée après, où les
-   imitations ailleurs ne peuvent plus concourir. Les lignes manquantes
-   d'un même trou sont alignées **ensemble, dans l'ordre**, avec un joker
-   avant, entre et après elles (interludes, silence) : chacune ne peut
-   prendre que sa place dans la suite. (Les chercher une à une laissait la
-   première avaler l'audio des suivantes, qui lui ressemblent.) Une ligne
-   qui colle mal est retirée et le trou réaligné sans elle ; si le trou
-   est trop court pour toutes, on retire celle qui, seule, ressemble le
-   moins à ce qu'il contient. Au bord de l'enregistrement, une ligne peut
-   être coupée en plein chant : si elle n'entre pas en entier dans le
-   dernier trou, on place son début (le plus long qui colle et va jusqu'à
-   la fin du fichier) — de même pour la fin d'une ligne au tout début.
+   perdue alors qu'elle est chantée. Pire : une voisine pouvait s'être
+   posée sur son audio (une formule en vaut une autre), ne lui laissant
+   aucun trou. Chaque trou est donc réaligné **avec ses voisines** :
+   0 à 6 lignes placées de chaque côté sont reprises, et tout le bloc est
+   aligné **ensemble, dans l'ordre**, avec un joker avant, entre et après
+   les lignes (interludes, silence) — chacune ne peut prendre que sa place
+   dans la suite. On garde la version qui score le mieux (même objectif
+   qu'à l'étape 3 : chaque ligne placée vaut son score + 1,6), si elle
+   bat l'existant.
+   - Une ligne placée par l'étape 3 peut **bouger, jamais disparaître** ;
+     seules les lignes manquantes peuvent rester de côté.
+   - Tant qu'une ligne colle mal (score < −1,6 : l'ordre tient déjà la
+     ligne, on accepte un chant plus rapide qu'à l'étape 3), on en retire
+     une — pas forcément la pire : des lignes absentes forcées dans le
+     bloc écrasent les lignes chantées, qui scorent alors aussi mal. On
+     essaie les six pires et retire celle dont le départ profite le plus
+     au bloc. Puis on tente d'ajouter chaque ligne laissée de côté, de
+     l'échanger contre une voisine proche, et l'autre lecture des mots
+     optionnels « (سيدنا) » (sans elle, v188 et v189 du Dalail scorent à
+     égalité).
+   - Au bord de l'enregistrement, une ligne peut être coupée en plein
+     chant : si elle n'entre pas en entier dans le dernier trou, on place
+     son début (le plus long qui colle et va jusqu'à la fin du fichier) —
+     de même pour la fin d'une ligne au tout début.
+   - Les lignes marquées `"chanted": false` dans le texte ne sont jamais
+     cherchées.
 4. **`new/export.py`** — les livrables ci-dessus, et `review_data.js`.
 
 `new/run.sh` enchaîne le tout. La position a priori vient des
@@ -212,8 +226,13 @@ La même commande sert pour n'importe quel enregistrement : seul change le
    ```bash
    python new/text_from_txt.py burda burda.txt burda_text.json
    ```
+   Commencez par « # » les rangées que le munshid ne chante pas (titres,
+   notes de l'édition) : elles restent dans le texte, marquées
+   `"chanted": false`, et ne sont jamais cherchées — sinon, courtes et
+   banales, elles peuvent se poser sur l'audio d'une vraie ligne.
    (Vous pouvez aussi écrire directement le JSON : une liste de
-   `{"id", "text"}` — c'est le format de `hamzia_verses.json`.)
+   `{"id", "text"}`, plus `"chanted": false` au besoin — c'est le format
+   de `hamzia_verses.json`.)
 2. **L'audio.** Posez le fichier (mp3, m4a, wav… tout ce que lit ffmpeg)
    à la racine du dépôt, par exemple `burda.mp3`.
 3. **Lancer :**
