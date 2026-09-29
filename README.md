@@ -1,4 +1,4 @@
-# dalail-asr — محاذاة الدلائل والهمزية
+# dalail-asr — محاذاة الدلائل والهمزية والبردة
 
 Alignement texte–audio, **au niveau de la ligne et du mot**, pour deux
 enregistrements de munshid, avec des outils de vérification à l'oreille :
@@ -42,6 +42,67 @@ new/                     LE PIPELINE ACTUEL (alignement forcé CTC)
 old/                     L'ANCIEN PIPELINE (Whisper + appariement)
   *_transcribe.py, *.asr.json, *_match.py, *_labels.txt, review_data.js
 ```
+
+## Les textes officiels de l'application (`app/`)
+
+Les trois fichiers de `app/` sont les textes **tels que l'application
+Dalail les exporte** pour chaque enregistrement (sections → segments) :
+
+| fichier | enregistrement | sorties |
+|---|---|---|
+| `app/dalail-nourach.json` | `dalail-nourach.mp3` (~2 h 28) | `nourach_*` |
+| `app/dalail-marrakchiya.json` | `dalail-marrakchiya.mp3` (~2 h 16) | `marrakchiya_*` |
+| `app/burda-app.json` | `burda.mp3` (~1 h 53) | `burda_*` |
+
+Ils ne sont **jamais modifiés** : `new/app_json_to_text.py` les lit et
+écrit à côté le texte du pipeline (`*_text.json`). Chaque ligne y garde
+l'identifiant de son segment, donc chaque sortie (`*_words.json`) se
+rattache directement aux segments de l'application — jusqu'aux 201 noms
+du Prophète ﷺ, une ligne par nom (`prophet_name_001`…), pour remplir
+leurs `audioStartMs` / `audioEndMs`. En mode `expanded` (Nourach) chaque
+nom est chanté avec sa salutation, qui fait partie de la ligne ; en mode
+`grouped`, le nom seul.
+
+Des lignes sont marquées `"chanted": false` (jamais cherchées — ce n'est
+qu'un champ ajouté, le texte est intact) :
+
+- les `checkpoint` (« نجز الربع الأول… ») et trois notes de l'édition
+  (« ثم تدعو بهذا الدعاء… », « قال رسول الله… من قرأ هذه الصلاة… »,
+  « وفي رواية: »), dans les deux Dalail ;
+- **Marrakchiya** : toute la section d'introduction (titre, أسماء النبي ﷺ,
+  الاستعاذة, les 201 noms, le poème qui les suit) — cet enregistrement
+  commence directement à la Fatiha du premier hizb (0:00), puis « إن الله
+  وملائكته » (0:20), « وصلى الله على سيدنا… » (0:35), et ne contient les
+  noms nulle part.
+
+```bash
+python new/app_json_to_text.py app/dalail-nourach.json nourach_text.json \
+    --not-chanted dalail_hizb_01_monday_s033,dalail_hizb_05_friday_s024,dalail_hizb_05_friday_s025
+new/run.sh nourach dalail-nourach.mp3 nourach_text.json
+# Burda : le fichier contient déjà des temps par vers → étiquettes a priori
+python new/app_json_to_text.py app/burda-app.json burda_text.json --prior new/work/burda_prior.txt
+new/run.sh burda burda.mp3 burda_text.json new/work/burda_prior.txt
+```
+
+| | Nourach | Marrakchiya | Burda |
+|---|---|---|---|
+| lignes du texte | 483 | 484 | 174 |
+| … marquées non chantées | 8 | 214 | 0 |
+| lignes placées | 442 | 266 / 270 chantables | 174 / 174 |
+| noms du Prophète ﷺ placés | 178 / 201 | (non récités) | — |
+| lignes répétées | 2 | 3 | 4 |
+
+Restent à écouter (`review.html#nourach/missing`, `#marrakchiya/missing`) :
+
+- **Nourach** : les 8 vers du poème attribué à l'auteur, à la fin (sans
+  doute non récités), 23 noms isolés, deux صلوات du mardi (s011, s014).
+- **Marrakchiya** : les trois صلوات du samedi s001–s003, que ce munshid
+  ne récite pas (vérifié à l'oreille sur le texte précédent), et la très
+  longue صلاة du mercredi s032.
+
+Les fichiers `dalail_*` ci-dessous restent l'alignement du même
+enregistrement sur le texte du livre (`dalail_segments.json`), antérieur
+à ces exports.
 
 ## Les livrables
 

@@ -37,6 +37,8 @@ else:
 W = int(a.window_min * 60 * 50)
 res = []
 for i, (ln, (p0, p1)) in enumerate(zip(lines, prior)):
+    if ln.get("chanted") is False:  # titres, notes : jamais cherchés
+        res.append({"i": i, "id": ln.get("id"), "finds": []}); continue
     c0 = max(0, int(p0) // 20 - W); c1 = min(E.frames, int(p1) // 20 + W)
     best, has_opt = E.best_reading(E.EM[c0:c1], ln["text"])
     if best is None:
