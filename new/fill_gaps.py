@@ -136,11 +136,15 @@ def old_value(block):
 
 def side(start, step, K):
     """Les K lignes placées de ce côté du trou, puis l'ancre (ou None : le
-    bord de l'enregistrement). Une ligne répétée sert toujours d'ancre."""
+    bord de l'enregistrement). Une ligne répétée peut bouger comme les
+    autres : ses répétitions tombent avec l'ancienne place et sont
+    recherchées de nouveau à la nouvelle (une fausse répétition l'avait
+    figée sur l'audio de sa voisine, v309 de la Marrakchiya). Seule une
+    ligne coupée par le bord reste fixe."""
     got = []; k = start
     while 0 <= k < n and len(got) <= K:
         if dec[k]["sung"]:
-            if len(got) < K and (len(dec[k]["passes"]) > 1 or dec[k].get("cut")): return None
+            if len(got) < K and dec[k].get("cut"): return None
             got.append(k)
         k += step
     if len(got) < K: return None
@@ -152,6 +156,48 @@ touched = set(); newly = set(); dropped = set()
 skip = {k for k, l in enumerate(lines) if l.get("chanted") is False}
 for k in skip:
     dec[k] = {"i": k, "id": dec[k]["id"], "sung": False, "passes": []}
+
+# Une suite de lignes pareilles à un mot près — les 201 noms du Prophète ﷺ,
+# chacun suivi de la même salutation — est alignée d'UN bloc, dans l'ordre,
+# entre la ligne placée avant elle et celle placée après : cherchée ligne à
+# ligne, la salutation commune trouvait 201 places presque égales, et un
+# nom glissait sur l'audio de son voisin (Siham, 2026-09-29, Nourach).
+# Chaque salutation doit alors prendre son tour ; seuls les noms décident.
+# Les mots optionnels « (سيدنا) » : les deux lectures, pour tout le bloc.
+k = 0
+while k < n:
+    if lines[k].get("type") != "prophet_name" or k in skip:
+        k += 1; continue
+    i0 = k
+    while k + 1 < n and lines[k + 1].get("type") == "prophet_name" and k + 1 not in skip:
+        k += 1
+    i1 = k; k += 1
+    la = next((m for m in range(i0 - 1, -1, -1) if dec[m]["sung"]), None)
+    ra = next((m for m in range(i1 + 1, n) if dec[m]["sung"]), None)
+    c0 = max(0, (dec[la]["passes"][-1]["t1"] - EDGE) // 20) if la is not None else 0
+    c1 = min(E.frames, (dec[ra]["passes"][0]["t0"] + EDGE) // 20) if ra is not None else E.frames
+    block = list(range(i0, i1 + 1))
+    best = None
+    for keep in (True, False):
+        r = E.align_run(E.EM[c0:c1], [(lines[m]["text"], keep) for m in block])
+        if r is None: continue
+        tot = sum((x[0] if x else -5.0) for x in r)
+        if best is None or tot > best[0]: best = (tot, r, keep)
+    if best is None:
+        print(f"noms v{i0 + 1:03d}–v{i1 + 1:03d} : trou trop court", flush=True); continue
+    _, r, keep = best
+    ok = 0
+    for m, x in zip(block, r):
+        if x is None or x[0] < JOINT:
+            dec[m] = {"i": m, "id": dec[m]["id"], "sung": False, "passes": []}; continue
+        adv, f0, f1, mine, ws = x
+        dec[m] = {"i": m, "id": dec[m]["id"], "sung": True, "filled": True, "joint": True,
+                  "optional_sung": keep if "(" in lines[m]["text"] else None,
+                  "passes": [E.to_find(c0, (adv, f0, f1, mine), ws)]}
+        touched.add(m); ok += 1
+    print(f"noms v{i0 + 1:03d}–v{i1 + 1:03d} alignés d'un bloc : {ok}/{len(block)} "
+          f"({(c0 * 20) / 60000:.1f}–{(c1 * 20) / 60000:.1f} min, « سيدنا » {'lu' if keep else 'omis'})", flush=True)
+
 first = {k for k in range(n) if dec[k]["sung"]}   # placées par l'étape 3
 
 # le bord de l'enregistrement peut couper une ligne en plein chant

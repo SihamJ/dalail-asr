@@ -88,17 +88,22 @@ new/run.sh burda burda.mp3 burda_text.json new/work/burda_prior.txt
 |---|---|---|---|
 | lignes du texte | 483 | 484 | 174 |
 | … marquées non chantées | 8 | 214 | 0 |
-| lignes placées | 442 | 266 / 270 chantables | 174 / 174 |
-| noms du Prophète ﷺ placés | 178 / 201 | (non récités) | — |
-| lignes répétées | 2 | 3 | 4 |
+| lignes placées | 458 | 267 / 270 chantables | 174 / 174 |
+| noms du Prophète ﷺ placés | 193 / 201 | (non récités) | — |
+| lignes répétées | 1 | 2 | 4 |
 
 Restent à écouter (`review.html#nourach/missing`, `#marrakchiya/missing`) :
 
 - **Nourach** : les 8 vers du poème attribué à l'auteur, à la fin (sans
-  doute non récités), 23 noms isolés, deux صلوات du mardi (s011, s014).
+  doute non récités), 8 noms isolés et une صلاة du mardi (s011).
 - **Marrakchiya** : les trois صلوات du samedi s001–s003, que ce munshid
-  ne récite pas (vérifié à l'oreille sur le texte précédent), et la très
-  longue صلاة du mercredi s032.
+  ne récite pas (vérifié à l'oreille sur le texte précédent).
+
+Les 201 noms sont alignés **d'un bloc**, dans l'ordre (étape 3 bis) :
+chaque ligne y est « (سيدنا) + le nom + la même salutation », et cherchée
+seule, la salutation commune trouvait 201 places presque égales — un nom
+glissait sur l'audio de son voisin. En bloc, chaque salutation prend son
+tour, et seuls les noms décident.
 
 Les fichiers `dalail_*` ci-dessous restent l'alignement du même
 enregistrement sur le texte du livre (`dalail_segments.json`), antérieur
