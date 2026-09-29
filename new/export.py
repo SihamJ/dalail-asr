@@ -91,6 +91,7 @@ for p in sorted(ROOT.glob("*_words.json")):
         span.setdefault(v, [float(t0), float(t1)]); span[v][1] = float(t1)
     data[key] = {"title": W.get("title", key) + " — فحص المحاذاة", "audio": W.get("audio", f"{key}.mp3"),
                  "rows": [{"t0": span[x["v"]][0], "t1": span[x["v"]][1], "review": x["review"],
+                           "sung": x["sung"], "cut": x.get("cut", False),
                            "label": f"v{x['v']:03d} — " + x["text"].replace("\n", " ⁘ ")} for x in W["lines"]]}
 (ROOT / "review_data.js").write_text("const DATA = " + json.dumps(data, ensure_ascii=False) + ";\n")
 n_sung = sum(r["sung"] for r in rows); n_rep = sum(len(r["passes"]) > 1 for r in rows)

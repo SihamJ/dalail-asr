@@ -8,7 +8,7 @@
          color: #2c2a22; margin: 0; }
   header { position: sticky; top: 0; background: #f4efe2ee; padding: 12px 18px;
            border-bottom: 1px solid #d8d0bc; z-index: 2; }
-  h1 { font-size: 16px; margin: 0 0 8px; }
+  h1 { font-size: 16px; margin: 0 0 8px; padding-inline-end: 170px; }
   audio { width: 100%; }
   .picker button { font-size: 13px; margin-inline-end: 8px; padding: 4px 12px;
                    border: 1px solid #b7ac8d; background: #fffdf6;
@@ -27,6 +27,21 @@
   .row.current { background: #e2ead9; outline: 2px solid #175945; }
   .row.review { border-inline-start: 4px solid #c86b45; background: #f7ece4; }
   .row.review.current { outline-color: #c86b45; }
+  /* a line the aligner did not find: its row spans the gap where it would sit */
+  .row.missing { border-inline-start: 4px dashed #8a6fb0; background: #efeaf4;
+                 color: #5b5470; }
+  .row.missing.current { outline-color: #8a6fb0; }
+  .tag { font-size: 11px; padding: 1px 8px; border-radius: 999px;
+         white-space: nowrap; align-self: center; }
+  .tag.miss { background: #8a6fb0; color: #fff; }
+  .tag.cut { background: #c86b45; color: #fff; }
+  .tag.gap { color: #8a6fb0; border: 1px solid #c9bcdc; }
+  .row.hidden { display: none; }
+  .filter { margin-top: 6px; }
+  .filter button { font-size: 12px; margin-inline-end: 6px; padding: 3px 10px;
+                   border: 1px solid #c9bcdc; background: #fffdf6;
+                   border-radius: 999px; cursor: pointer; color: #5b5470; }
+  .filter button.on { background: #8a6fb0; color: #fff; border-color: #8a6fb0; }
   .row.edited { border-inline-start: 4px solid #175945; background: #eaf0e4; }
   .t { font-size: 11px; color: #98917a; min-width: 88px; direction: ltr;
        text-align: right; font-variant-numeric: tabular-nums; }
@@ -57,6 +72,11 @@
   <h1 id="title"></h1>
   <button id="save">تنزيل التعديلات (<span id="n">0</span>)</button>
   <div class="picker" id="picker"></div>
+  <div class="filter" id="filter">
+    <button data-f="all" class="on">الكل</button>
+    <button data-f="missing">غير المُنشَد فقط</button>
+    <button data-f="review">للمراجعة فقط</button>
+  </div>
   <audio id="a" controls preload="none"></audio>
   <div id="stats"></div>
 </header>
@@ -96,6 +116,7 @@ let ov = JSON.parse(localStorage.getItem(KEY) || "{}"); // {rec:{i:{t0,t1}}}
 let recKey = null;
 let rows = [];
 let sel = -1;
+let filter = "all";
 
 function fmt(s) {
   const m = Math.floor(s / 60), r = Math.floor(s % 60);
@@ -126,8 +147,21 @@ function paintRow(i) {
   r.el.querySelector(".t").textContent = fmt(t0) + "–" + fmt(t1);
   r.el.classList.toggle("edited", edited(i));
   // an edited row is answered — the orange flag yields to the green edge
-  r.el.classList.toggle("review", r.review && !edited(i));
+  r.el.classList.toggle("review", r.review && r.sung !== false && !edited(i));
+  r.el.classList.toggle("missing", r.sung === false && !edited(i));
+  r.el.classList.toggle("hidden",
+    (filter === "missing" && r.sung !== false) ||
+    (filter === "review" && !r.review));
 }
+
+function setFilter(f) {
+  filter = f;
+  for (const b of document.querySelectorAll(".filter button"))
+    b.classList.toggle("on", b.dataset.f === f);
+  rows.forEach((_, i) => paintRow(i));
+}
+for (const b of document.querySelectorAll(".filter button"))
+  b.onclick = () => setFilter(b.dataset.f);
 
 function paintBench() {
   if (sel < 0) return;
@@ -163,8 +197,10 @@ function markHere(field) { setTime(field, a.currentTime); }
 function playFrom(field) {
   if (sel < 0) return;
   const t = rowTimes(sel)[field];
-  // hearing the EDGE needs a run-up: two seconds before it
-  a.currentTime = Math.max(0, t - (field === "t1" ? 2 : 0.05));
+  // hearing the EDGE needs a run-up: two seconds before it — and a missing
+  // line three, so the end of the line before it is heard going into the gap
+  const runUp = field === "t1" ? 2 : rows[sel].sung === false && !edited(sel) ? 3 : 0.05;
+  a.currentTime = Math.max(0, t - runUp);
   a.play();
 }
 function resetRow() {
@@ -184,14 +220,22 @@ function show(key) {
   a.src = d.audio;
   rows = d.rows.map(r => ({ ...r }));
   const n = rows.filter(r => !r.review).length;
+  const nm = rows.filter(r => r.sung === false).length;
   document.getElementById("stats").textContent =
-    "تلقائي " + n + " · للمراجعة " + (rows.length - n) +
-    " — اضغطي سطراً لتحريره في اللوحة أسفلَ الصفحة؛ البرتقالي مُقدَّر، الأخضر معدَّل";
+    "تلقائي " + n + " · للمراجعة " + (rows.length - n) + " (منها غير مُنشَد " + nm + ")" +
+    " — اضغطي سطراً لتحريره في اللوحة أسفلَ الصفحة؛ البرتقالي مُقدَّر، البنفسجي غير مُنشَد" +
+    " (يُسمَع ما بين السطرين المحيطين به)، الأخضر معدَّل";
   list.innerHTML = "";
   rows.forEach((r, i) => {
     const el = document.createElement("div");
     el.className = "row";
-    el.innerHTML = "<span class=t></span><span>" + r.label + "</span>";
+    let tags = "";
+    if (r.sung === false) {
+      const g = r.t1 - r.t0;
+      tags = "<span class='tag miss'>غير مُنشَد</span>" +
+        "<span class='tag gap'>" + (g < 1 ? "لا فراغ بين جارَيه" : "فراغ " + Math.round(g) + "s") + "</span>";
+    } else if (r.cut) tags = "<span class='tag cut'>مقطوع بطرف التسجيل</span>";
+    el.innerHTML = "<span class=t></span><span>" + r.label + "</span>" + tags;
     el.onclick = () => { select(i); playFrom("t0"); };
     list.appendChild(el);
     r.el = el;
@@ -246,7 +290,10 @@ document.getElementById("save").onclick = () => {
   l.click();
 };
 
-show("hamzia");
+// review.html#dalail opens that recording; #dalail/missing with the filter on
+const [hk, hf] = decodeURIComponent(location.hash.slice(1)).split("/");
+show(DATA[hk] ? hk : "hamzia");
+if (hf) setFilter(hf);
 </script>
 </body>
 </html>
