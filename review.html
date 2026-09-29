@@ -37,6 +37,10 @@
   .tag.cut { background: #c86b45; color: #fff; }
   .tag.gap { color: #8a6fb0; border: 1px solid #c9bcdc; }
   .row.hidden { display: none; }
+  /* marked not chanted in the text for this reading: not a gap to hunt */
+  .row.skip { opacity: .45; border-inline-start: 4px solid transparent;
+              background: none; }
+  .tag.skip { color: #7a745f; border: 1px solid #d8d0bc; }
   .filter { margin-top: 6px; }
   .filter button { font-size: 12px; margin-inline-end: 6px; padding: 3px 10px;
                    border: 1px solid #c9bcdc; background: #fffdf6;
@@ -147,11 +151,13 @@ function paintRow(i) {
   r.el.querySelector(".t").textContent = fmt(t0) + "–" + fmt(t1);
   r.el.classList.toggle("edited", edited(i));
   // an edited row is answered — the orange flag yields to the green edge
+  const missing = r.sung === false && !r.skip;
   r.el.classList.toggle("review", r.review && r.sung !== false && !edited(i));
-  r.el.classList.toggle("missing", r.sung === false && !edited(i));
+  r.el.classList.toggle("missing", missing && !edited(i));
+  r.el.classList.toggle("skip", !!r.skip);
   r.el.classList.toggle("hidden",
-    (filter === "missing" && r.sung !== false) ||
-    (filter === "review" && !r.review));
+    (filter === "missing" && !missing) ||
+    (filter === "review" && (!r.review || r.skip)));
 }
 
 function setFilter(f) {
@@ -220,9 +226,11 @@ function show(key) {
   a.src = d.audio;
   rows = d.rows.map(r => ({ ...r }));
   const n = rows.filter(r => !r.review).length;
-  const nm = rows.filter(r => r.sung === false).length;
+  const nm = rows.filter(r => r.sung === false && !r.skip).length;
+  const ns = rows.filter(r => r.skip).length;
   document.getElementById("stats").textContent =
-    "تلقائي " + n + " · للمراجعة " + (rows.length - n) + " (منها غير مُنشَد " + nm + ")" +
+    "تلقائي " + n + " · للمراجعة " + (rows.length - n - ns) + " (منها غير مُنشَد " + nm + ")" +
+    (ns ? " · غير مقروء في هذه القراءة " + ns : "") +
     " — اضغطي سطراً لتحريره في اللوحة أسفلَ الصفحة؛ البرتقالي مُقدَّر، البنفسجي غير مُنشَد" +
     " (يُسمَع ما بين السطرين المحيطين به)، الأخضر معدَّل";
   list.innerHTML = "";
@@ -230,7 +238,9 @@ function show(key) {
     const el = document.createElement("div");
     el.className = "row";
     let tags = "";
-    if (r.sung === false) {
+    if (r.skip) {
+      tags = "<span class='tag skip'>غير مقروء في هذه القراءة</span>";
+    } else if (r.sung === false) {
       const g = r.t1 - r.t0;
       tags = "<span class='tag miss'>غير مُنشَد</span>" +
         "<span class='tag gap'>" + (g < 1 ? "لا فراغ بين جارَيه" : "فراغ " + Math.round(g) + "s") + "</span>";
@@ -291,9 +301,13 @@ document.getElementById("save").onclick = () => {
 };
 
 // review.html#dalail opens that recording; #dalail/missing with the filter on
-const [hk, hf] = decodeURIComponent(location.hash.slice(1)).split("/");
-show(DATA[hk] ? hk : "hamzia");
-if (hf) setFilter(hf);
+function fromHash() {
+  const [hk, hf] = decodeURIComponent(location.hash.slice(1)).split("/");
+  show(DATA[hk] ? hk : (recKey || "hamzia"));
+  setFilter(hf || "all");
+}
+fromHash();
+window.addEventListener("hashchange", fromHash);
 </script>
 </body>
 </html>

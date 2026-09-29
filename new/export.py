@@ -83,6 +83,11 @@ json.dump({"recording": name, "title": title, "audio": audio_url,
 data = {}
 for p in sorted(ROOT.glob("*_words.json")):
     W = json.load(open(p)); key = W["recording"]
+    # the lines the text marks "chanted": false (titles, notes, a section a
+    # reading does not recite): shown apart, never listed as missing
+    tf = ROOT / W.get("text_file", "")
+    quiet = {l.get("id") for l in json.load(open(tf))
+             if l.get("chanted") is False} if tf.is_file() and tf.suffix == ".json" else set()
     lab = [l.split("\t") for l in open(ROOT / f"{key}_labels.txt", encoding="utf-8")]
     span = {}
     for t0, t1, rest in lab:
@@ -92,6 +97,7 @@ for p in sorted(ROOT.glob("*_words.json")):
     data[key] = {"title": W.get("title", key) + " — فحص المحاذاة", "audio": W.get("audio", f"{key}.mp3"),
                  "rows": [{"t0": span[x["v"]][0], "t1": span[x["v"]][1], "review": x["review"],
                            "sung": x["sung"], "cut": x.get("cut", False),
+                           "skip": x.get("id") in quiet,
                            "label": f"v{x['v']:03d} — " + x["text"].replace("\n", " ⁘ ")} for x in W["lines"]]}
 (ROOT / "review_data.js").write_text("const DATA = " + json.dumps(data, ensure_ascii=False) + ";\n")
 n_sung = sum(r["sung"] for r in rows); n_rep = sum(len(r["passes"]) > 1 for r in rows)
