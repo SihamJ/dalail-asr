@@ -223,7 +223,9 @@ function show(key) {
   document.getElementById("bench").classList.remove("on");
   const d = DATA[key];
   document.getElementById("title").textContent = d.title;
-  a.src = d.audio;
+  // ?nourach=URL : another copy of a recording's audio, same sound — e.g.
+  // a constant-bitrate one, which a browser seeks exactly (2026-09-30)
+  a.src = new URLSearchParams(location.search).get(key) || d.audio;
   rows = d.rows.map(r => ({ ...r }));
   const n = rows.filter(r => !r.review).length;
   const nm = rows.filter(r => r.sung === false && !r.skip).length;

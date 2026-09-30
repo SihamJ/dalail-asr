@@ -60,7 +60,9 @@ function build(){
     textEl.appendChild(d); lineEls.push(d);
   });
   words.sort((x,y)=>x.t-y.t);
-  if(a.dataset.src!==R.audio){a.src=R.audio; a.dataset.src=R.audio;}
+  // ?nourach=URL : another copy of the recording's audio (see review.html)
+  const src=new URLSearchParams(location.search).get(rec)||R.audio;
+  if(a.dataset.src!==src){a.src=src; a.dataset.src=src;}
   hint.textContent = timing==='new'
     ? 'اضغطوا أيَّ كلمة للانتقال إليها. «×2» علامةُ بيتٍ أو سطرٍ أُنشد مرّتين: يُضاء في كلِّ مرّة.'
     : 'التوقيت القديم: كلماتُ Whisper المطابَقة فقط؛ الكلماتُ الباهتة لم يجد لها المطابِقُ القديم وقتًا.';
@@ -80,5 +82,9 @@ function tick(){
   }
   requestAnimationFrame(tick);
 }
-build(); requestAnimationFrame(tick);
+// #nourach opens that recording, as review.html does
+const fromHash=()=>{const k=decodeURIComponent(location.hash.slice(1)); const b=[...recEl.querySelectorAll('button')].find(x=>x.dataset.r===k); if(b) b.click(); return !!b;};
+if(!fromHash()) build();
+addEventListener('hashchange',fromHash);
+requestAnimationFrame(tick);
 </script></body></html>

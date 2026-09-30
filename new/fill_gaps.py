@@ -21,12 +21,23 @@ lignes marquées « "chanted": false » dans le texte ne sont jamais
 cherchées. Une répétition n'est retenue que si elle suit sa ligne de près
 (≤ 20 s).
 
-    python new/fill_gaps.py EM.pt TEXTE.json DECISION.json CANDIDATS.json SORTIE.json"""
+    python new/fill_gaps.py EM.pt TEXTE.json DECISION.json CANDIDATS.json SORTIE.json
+        [--names-keep-optional]
+
+--names-keep-optional : la lecture dit « سيدنا » devant chaque nom. Le
+modèle reconnaît mal ce « سيدنا » chanté : laissé au score, il l'omettait,
+et chaque nom s'allumait une à deux secondes trop tard, sur « سيدنا »
+(Nourach, vérifié fenêtre par fenêtre avec Whisper, 2026-09-30). Le forcer
+dans l'alignement du bloc déformait ses voisins et faisait tomber des noms.
+Le placement reste donc celui d'avant ; une dernière étape cherche
+« سيدنا » dans les secondes qui précèdent chaque nom placé, et la ligne
+commence là (« سيدنا » devient son premier mot)."""
 import json, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from ctc import Emissions
 
 emf, textf, decf, candf, outf = sys.argv[1:6]
+NAMES_KEEP = "--names-keep-optional" in sys.argv[6:]
 E = Emissions(emf)
 lines = json.load(open(textf)); dec = json.load(open(decf)); cands = json.load(open(candf))
 TAKE = -1.3      # même seuil que l'étape 3 (lignes seules, bords coupés)
@@ -280,6 +291,52 @@ for k in sorted(touched - dropped):
     rr = E.search(E.EM[f1:lim], toks, owner, len(ws))
     if rr and rr[0] >= p["adv"] - REPEAT:
         dec[k]["passes"].append(E.to_find(f1, rr, ws))
+
+# « (سيدنا) » devant les noms, quand la lecture le dit (voir en tête) : le
+# nom reste où il est ; la ligne recule jusqu'au début de « سيدنا », cherché
+# entre la fin de la ligne d'avant (au plus 3 s plus tôt) et le nom
+if NAMES_KEEP:
+    got = refit = miss = 0
+    last = None                                   # la dernière ligne placée avant k
+    for k in range(n):
+        if not dec[k]["sung"]: continue
+        opt = [w.strip("()") for w in lines[k]["text"].split() if w.startswith("(")]
+        p = dec[k]["passes"][0]; ws = p.get("words") or []
+        if lines[k].get("type") == "prophet_name" and opt and ws and ws[0][0] != opt[0]:
+            name, n0, n1 = ws[0]
+            a0 = (n0 - 3000) // 20; b0 = n1 // 20
+            toks, owner, tw = E.tokens_of(f"({opt[0]}) {name}", True)
+            rr = E.search(E.EM[a0:b0], toks, owner, len(tw))
+            f = E.to_find(a0, rr, tw) if rr else None
+            ok = f is not None and abs(f["words"][1][1] - n0) <= 400 and f["words"][0][2] <= n0 + 200
+            if ok and last is not None:
+                pp = dec[last]["passes"][-1]
+                s0 = f["words"][0][1]
+                if s0 < pp["t1"]:
+                    # la fin de la ligne d'avant s'était étirée sur ce « سيدنا » :
+                    # elle est réalignée seule, de son début jusqu'à lui
+                    pre = bool(pp["words"]) and pp["words"][0][0] == opt[0]
+                    lt, lo, lw = E.tokens_of(lines[last]["text"], True if pre else keep_of(last))
+                    lo0 = max(0, pp["t0"] // 20 - 5)
+                    r2 = E.search(E.EM[lo0:s0 // 20], lt, lo, len(lw)) if s0 // 20 - lo0 > 10 else None
+                    # sans perdre plus de 0.5, ni passer sous le seuil de
+                    # vérification de l'export (-1.2) si elle était au-dessus
+                    if r2 and r2[0] >= pp["adv"] - 0.5 and (r2[0] >= -1.2 or pp["adv"] < -1.2):
+                        dec[last]["passes"][-1] = E.to_find(lo0, r2, lw); refit += 1
+                    else:
+                        # la ligne d'avant reste : « سيدنا » cherché après elle
+                        a1 = max(pp["t1"], n0 - 3000) // 20
+                        r3 = E.search(E.EM[a1:b0], toks, owner, len(tw)) if b0 - a1 > 10 else None
+                        f = E.to_find(a1, r3, tw) if r3 else None
+                        ok = f is not None and abs(f["words"][1][1] - n0) <= 400 and f["words"][0][2] <= n0 + 200
+            if ok:
+                p["words"] = [[opt[0], f["words"][0][1], min(f["words"][0][2], n0)]] + ws
+                p["t0"] = f["words"][0][1]; got += 1
+            else:
+                miss += 1
+        last = k
+    print(f"« سيدنا » placé devant {got} noms, dont {refit} en réalignant la fin du nom d'avant "
+          f"({miss} laissés tels quels)", flush=True)
 
 json.dump(dec, open(outf, "w"), ensure_ascii=False)
 filled = sum(bool(d.get("filled")) and d["sung"] for d in dec)

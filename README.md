@@ -78,7 +78,7 @@ qu'un champ ajouté, le texte est intact) :
 ```bash
 python new/app_json_to_text.py app/dalail-nourach.json nourach_text.json \
     --not-chanted dalail_hizb_01_monday_s033,dalail_hizb_05_friday_s024,dalail_hizb_05_friday_s025
-new/run.sh nourach dalail-nourach.mp3 nourach_text.json
+NAMES_KEEP_OPTIONAL=1 new/run.sh nourach dalail-nourach.mp3 nourach_text.json
 # Burda : le fichier contient déjà des temps par vers → étiquettes a priori
 python new/app_json_to_text.py app/burda-app.json burda_text.json --prior new/work/burda_prior.txt
 new/run.sh burda burda.mp3 burda_text.json new/work/burda_prior.txt
@@ -104,6 +104,50 @@ chaque ligne y est « (سيدنا) + le nom + la même salutation », et cherch�
 seule, la salutation commune trouvait 201 places presque égales — un nom
 glissait sur l'audio de son voisin. En bloc, chaque salutation prend son
 tour, et seuls les noms décident.
+
+**« سيدنا » devant les noms (Nourach).** Le munshid dit « سيدنا » devant
+chaque nom, mais le modèle reconnaît mal ce mot chanté : laissé au score,
+l'alignement l'omettait, et chaque ligne commençait au nom — une à deux
+secondes trop tard, pendant que la ligne d'avant restait allumée.
+Vérifié fenêtre par fenêtre avec Whisper (محمد, أحمد, حامد, محمود, عاقب :
+« سيدنا » entendu là où la ligne commence désormais). Le forcer dans le
+bloc déformait les voisins et faisait tomber des noms ; le placement reste
+donc celui d'avant (mêmes 458 lignes, mêmes 193 noms, mêmes 57 REVIEW), et
+une dernière étape (`NAMES_KEEP_OPTIONAL=1`, option `--names-keep-optional`
+de `fill_gaps.py`) cherche « سيدنا » dans les secondes qui précèdent chaque
+nom placé : la ligne commence là, et « سيدنا » devient son premier mot.
+Quand la fin de la ligne d'avant (« وعلى آله ») s'était étirée sur ce
+« سيدنا », elle est réalignée seule jusqu'à lui — si elle n'y perd pas en
+score. Résultat : 151 des 193 noms placés commencent à « سيدنا » (146 par
+cette étape, 5 l'avaient déjà) ; les 42 autres sont restés tels quels (le
+nom aurait bougé). À n'utiliser que pour une lecture
+qui dit « سيدنا ».
+
+### L'audio de Nourach : à remplacer par une copie à débit constant
+
+`dalail-nourach.mp3` est un MP3 à **débit variable** (VBR, en-tête Xing)
+de 2 h 28. Pour sauter à un instant, un lecteur se fie à la table de cet
+en-tête : 100 repères, chacun à 1/256 du fichier près — soit ~35 s d'audio
+par cran sur un fichier aussi long, et la table de ce fichier est en plus
+décalée. Mesuré dans de vrais navigateurs, un saut tombe **1 à 124 s** à
+côté (Chromium : −13 à +79 s ; WebKit/Safari : −1 à +124 s). Lu d'un bout à
+l'autre, tout est juste ; c'est le clic sur une ligne (ou tout saut dans
+l'application) qui tombe ailleurs. Les quatre autres enregistrements sont
+à débit constant et ne sont pas touchés.
+
+Le remède est dans l'audio, pas dans les temps : le même son réencodé à
+débit constant (256 kbit/s), où un saut se calcule exactement.
+
+```bash
+ffmpeg -i dalail-nourach.mp3 -map 0:a -c:a libmp3lame -b:a 256k -ar 44100 dalail-nourach-cbr.mp3
+```
+
+Vérifié : les deux fichiers décodés coïncident à 0,0 ms près à six points
+répartis sur les 2 h 28, et un saut tombe à **0,03 s** près dans Chromium,
+**0,2 s** dans WebKit. Les temps livrés restent donc valables tels quels :
+il suffit de remplacer le fichier servi (même nom, même URL). Une copie est
+dans `audio-cbr/` (hors git) — les pages de vérification l'utilisent
+d'elles-mêmes, voir plus bas.
 
 Les fichiers `dalail_*` ci-dessous restent l'alignement du même
 enregistrement sur le texte du livre (`dalail_segments.json`), antérieur
@@ -392,6 +436,15 @@ bouton **الجديد / القديم** bascule entre le nouveau timing et l'anci
 (Whisper) ; les mots pâles n'avaient aucun temps dans l'ancien. Cliquez un
 mot pour y amener l'audio ; «×2» signale une ligne chantée deux fois, qui
 s'allume à chaque passage. L'audio est diffusé depuis R2.
+
+Une copie locale d'un enregistrement, posée dans `audio-cbr/` (par ex.
+`audio-cbr/dalail-nourach.mp3`), remplace son audio : `review.sh` et
+`word_review.sh` ajoutent `?nourach=/audio-cbr/dalail-nourach.mp3` à
+l'adresse (n'importe quelle URL marche : `?<enregistrement>=<url>`). Les
+deux pages sont servies par `new/rangeserve.py`, qui répond aux requêtes
+par plages d'octets — sans elles, un navigateur ne peut pas sauter dans
+un long fichier audio local. `#nourach` ouvre directement un
+enregistrement, sur les deux pages.
 
 ### Ligne par ligne — `review.html`
 
